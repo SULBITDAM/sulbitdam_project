@@ -1,0 +1,27 @@
+{
+  "name": "sulbitdam_project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SULBITDAM/sulbitdam_project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SULBITDAM/sulbitdam_project/issues"
+  },
+  "homepage": "https://github.com/SULBITDAM/sulbitdam_project#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "solapi": "^5.4.0"
+  }
+}
