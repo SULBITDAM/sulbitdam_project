@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>결과 수신 동의</title>
+    <link rel="stylesheet" href="/public/css/consent.css" />
+  </head>
+  <body>
+    <div class="consent-container">
+      <h2>결과 알림톡 수신을 위한 정보 입력</h2>
+      <form id="consentForm">
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="phone">전화번호</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="010-1234-5678"
+          required
+        />
+
+        <label class="checkbox">
+          <input type="checkbox" id="agree" required />
+          <span>개인정보 수집 및 이용에 동의합니다.</span>
+        </label>
+
+        <button type="submit">알림톡으로 결과 받기</button>
+      </form>
+    </div>
+
+    <script src="/public/js/consent.js"></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>전통주 취향 설문</title>
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <link rel="stylesheet" href="/public/css/survey.css" />
+  </head>
+  <body>
+    <div class="survey-container">
+      <div class="progress-bar">
+        <img src="/public/img/bottle.png" alt="icon" class="icon" />
+        <div class="progress-track">
+          <div class="progress-fill" style="width: 20%"></div>
+          <!-- JS로 width 조절 -->
+        </div>
+      </div>
+
+      <div class="question-card">
+        <h2 class="question-text">Q. 어떤 향을 선호하시나요?</h2>
+        <div class="question-image">
+          <img src="/public/img/q1.png" alt="질문 이미지" />
+        </div>
+        <div class="answer-buttons">
+          <button class="answer-btn">달콤한 향</button>
+          <button class="answer-btn">산뜻한 향</button>
+        </div>
+      </div>
+    </div>
+    <script src="/public/js/survey.js"></script>
+  </body>
+</html>
