@@ -32,3 +32,18 @@ exports.sendKakaoMessage = async (req, res) => {
     });
   }
 };
+
+exports.submitSurvey = async (req, res) => {
+  const { name, tel, result } = req.body;
+
+  try {
+    const saved = await require("../models/messageModel").saveSurveyResult({
+      name,
+      tel,
+      result,
+    });
+    res.json({ success: true, data: saved });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
