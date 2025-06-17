@@ -16,9 +16,9 @@ exports.saveUserInfoAndSend = async (req, res) => {
 
   // 배포후에 배포용 주소로 변경예정
   //   const url = `http://localhost:8080/result/${answerId}`;
-  const btn_url = `${baseUrl}/result/${answerId}`;
+  //   const url = `${baseUrl}/result/${answerId}`;
 
-  //   const url = "www.naver.com";
+  const url = "www.naver.com";
   try {
     const answerData = await UserAnswer.findById(answerId);
     if (!answerData)
@@ -31,7 +31,7 @@ exports.saveUserInfoAndSend = async (req, res) => {
       tel,
       answerId,
     });
-    // console.log(url);
+    console.log(url);
     const response = await messageService.send({
       to: tel,
       from: process.env.SOLAPI_PHONE,
@@ -41,7 +41,7 @@ exports.saveUserInfoAndSend = async (req, res) => {
         variables: {
           "#{name}": name,
           "#{text}": answerData.result.title,
-          "#{url}": btn_url,
+          "#{url}": url,
         },
         disableSms: false,
       },
