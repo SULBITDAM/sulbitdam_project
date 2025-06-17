@@ -31,7 +31,7 @@ exports.saveUserInfoAndSend = async (req, res) => {
       tel,
       answerId,
     });
-    console.log(url);
+    // console.log(url);
     const response = await messageService.send({
       to: tel,
       from: process.env.SOLAPI_PHONE,
