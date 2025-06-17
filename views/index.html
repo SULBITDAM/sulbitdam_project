@@ -8,11 +8,11 @@
   </head>
   <body>
     <header>
-      <div class="logo">로고</div>
+      <div class="logo"><img src="/public/img/logo.png" alt="로고" /></div>
     </header>
 
     <section class="hero">
-      <h2>경북의 전통주를 맛보다</h2>
+      <h1>경북의 전통주를 맛보다</h1>
       <div class="characters">
         <img src="/public/img/char1.png" alt="캐릭터1" />
         <img src="/public/img/char2.png" alt="캐릭터2" />
@@ -25,44 +25,66 @@
     </section>
 
     <section class="intro">
-      <h3>소믈리에 테스트</h3>
-      <p>
-        전통방식으로 빚은 다양한 전통주를 알아보고<br />나에게 맞는 술도
-        찾아보자!
-      </p>
+      <h2>소믈리에 테스트</h2>
       <div class="preview-img">
         <img src="/public/img/preview.png" alt="미리보기" />
       </div>
-      <button onclick="location.href='/survey'" class="btn-start">
-        테스트 시작하기
-      </button>
+      <p>
+        전통방식으로 빚은 다양한<br />
+        전통주를 알아보고<br />나에게 맞는 술도 찾아보자!
+      </p>
+      <div class="sugar-section">
+        <div class="sugar-level">Q. 원하는 당도는?</div>
+        <button onclick="location.href='/survey'" class="btn-start">
+          테스트 시작하기
+        </button>
+      </div>
     </section>
 
     <section class="question-preview">
       <div class="card">
-        <div class="question-title">질문</div>
-        <div class="question-image">[이미지]</div>
+        <div class="question">Q. 당신이 선호하는 술의 도수는?</div>
+        <div class="question-title">술 도수 취향</div>
+        <div class="question-image">
+          <img src="/public/img/question.png" alt="질문" />
+        </div>
         <div class="options">
-          <div class="option">답1</div>
-          <div class="option">답2</div>
+          <div class="option">1. 도수가 낮고 마시기 편한 술</div>
+          <div class="option">2. 도수가 높고 진한 풍미의 술</div>
         </div>
       </div>
     </section>
 
     <section class="introduce">
-      <h3>경북 전통주 소개</h3>
+      <h2>경북 전통주 소개</h2>
       <div class="products">
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
+        <div class="item">
+          <img src="/public/img/drink2.png" alt="경주 별맥" />
+          <p>경주 별맥</p>
+        </div>
+        <div class="item center">
+          <img src="/public/img/drink3.png" alt="대구 불로막걸리" />
+          <p class="center-label">대구 불로막걸리</p>
+        </div>
+        <div class="item">
+          <img src="/public/img/drink1.png" alt="경주 법주" />
+          <p>경주 법주</p>
+        </div>
       </div>
     </section>
 
     <footer>
-      <div class="logo">로고</div>
-      <div class="copyright">
-        주최: 경북과학대학교 창업동아리 925<br />Copyright ⓒ 2024 by SULBITDAM.
-        All rights reserved.
+      <div class="footer-left">
+        <img src="/public/img/logo.png" alt="로고" class="logo" />
+        <div class="copyright">
+          술빛담<br />
+          대구광역시 동구 화랑로 525<br />
+          Copyright ⓒ 2025 by SULBITDAM. All right reserved
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href=""><img src="/public/img/icon_youtube.png" alt="유튜브" /></a>
+        <a href=""><img src="/public/img/icon_github.png" alt="깃허브" /></a>
       </div>
     </footer>
   </body>
