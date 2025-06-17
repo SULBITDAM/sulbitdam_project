@@ -9,6 +9,7 @@ fetch(`/api/result/${resultId}`)
     document.getElementById("resultTitle").textContent = result.title;
     document.getElementById("resultDesc").textContent = result.desc;
     document.getElementById("resultImage").src = result.image;
+    document.getElementById("resultImage").alt = result.title;
   })
   .catch((err) => {
     alert("결과를 불러오지 못했습니다.");
