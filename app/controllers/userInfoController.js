@@ -16,9 +16,9 @@ exports.saveUserInfoAndSend = async (req, res) => {
 
   // 배포후에 배포용 주소로 변경예정
   //   const url = `http://localhost:8080/result/${answerId}`;
-  //   const url = `${baseUrl}/result/${answerId}`;
+  const url = `https://sulbitdam-project.onrender.com/result/6850ef9ecbb7816ea03eb66c`;
 
-  const url = "www.naver.com";
+  //   const url = "www.naver.com";
   try {
     const answerData = await UserAnswer.findById(answerId);
     if (!answerData)
