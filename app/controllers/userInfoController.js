@@ -15,7 +15,10 @@ exports.saveUserInfoAndSend = async (req, res) => {
 
   // 배포후에 배포용 주소로 변경예정
   //   const url = `http://localhost:8080/result/${answerId}`;
-  const url = "www.naver.com";
+  const baseUrl = process.env.BASE_URL || "http://localhost:8080";
+  const url = `${baseUrl}/result/${answerId}`;
+
+  //   const url = "www.naver.com";
   try {
     const answerData = await UserAnswer.findById(answerId);
     if (!answerData)
