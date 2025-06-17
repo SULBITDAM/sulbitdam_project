@@ -1,5 +1,6 @@
 const { SolapiMessageService } = require("solapi");
-require("dotenv").config();
+const dotenv = require("dotenv");
+dotenv.config();
 
 const api_key = process.env.API_KEY || "";
 const api_secret = process.env.API_SECRET || "";

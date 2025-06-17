@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 
-const SurveyResultSchema = new mongoose.Schema({
-  name: String,
-  phone: String,
+const UserAnswerSchema = new mongoose.Schema({
   answers: [String],
   result: {
     title: String,
@@ -15,4 +13,4 @@ const SurveyResultSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("SurveyResult", SurveyResultSchema);
+module.exports = mongoose.model("UserAnswer", UserAnswerSchema);

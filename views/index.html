@@ -4,43 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>경북의 전통주 소믈리에 테스트</title>
-    <link rel="stylesheet" href="/public/css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
+    <header>
+      <div class="logo"><img src="/img/logo.png" alt="로고" /></div>
+    </header>
+
     <section class="hero">
-      <div class="row row-top">
-        <img src="/public/img/char1.png" alt="캐릭터1" class="char char1" />
-        <div class="logo">
-          <img src="/public/img/logo.png" alt="로고" />
-        </div>
-        <img src="/public/img/char2.png" alt="캐릭터2" class="char char2" />
-      </div>
-
-      <div class="row row-middle">
-        <img src="/public/img/char3.png" alt="캐릭터3" class="char char3" />
-        <h1>경북의 전통주를 맛보다!</h1>
-        <img src="/public/img/char4.png" alt="캐릭터4" class="char char4" />
-      </div>
-
-      <div class="row row-bottom">
-        <img src="/public/img/char5.png" alt="캐릭터5" class="char char5" />
-        <div class="spacer"></div>
-        <img src="/public/img/char6.png" alt="캐릭터6" class="char char6" />
-      </div>
-
-      <div class="mobile-header">
-        <div class="mobile-logo">
-          <img src="/public/img/logo.png" alt="로고" />
-        </div>
-        <h1 class="mobile-title">경북의 전통주를 맛보다!</h1>
-      </div>
-      <div class="characters-mobile">
-        <img src="/public/img/char1.png" alt="캐릭터1" />
-        <img src="/public/img/char2.png" alt="캐릭터2" />
-        <img src="/public/img/char3.png" alt="캐릭터3" />
-        <img src="/public/img/char4.png" alt="캐릭터4" />
-        <img src="/public/img/char5.png" alt="캐릭터5" />
-        <img src="/public/img/char6.png" alt="캐릭터6" />
+      <h1>경북의 전통주를 맛보다</h1>
+      <div class="characters">
+        <img src="/img/char1.png" alt="캐릭터1" />
+        <img src="/img/char2.png" alt="캐릭터2" />
+        <img src="/img/char3.png" alt="캐릭터3" />
+        <img src="/img/char4.png" alt="캐릭터4" />
+        <img src="/img/char5.png" alt="캐릭터5" />
+        <img src="/img/char6.png" alt="캐릭터6" />
       </div>
 
       <div class="scroll-down">⌄</div>
@@ -48,23 +27,15 @@
 
     <section class="intro">
       <h2>소믈리에 테스트</h2>
-
-      <div class="intro-body">
-        <div class="intro-right">
-          <img src="/public/img/preview.png" alt="미리보기" />
-        </div>
-
-        <div class="intro-left">
-          <p>
-            전통방식으로 빚은 다양한<br />
-            전통주를 알아보고<br />
-            나에게 맞는 술도 찾아보자!
-          </p>
-          <div class="sugar-level">Q. 원하는 당도는?</div>
-        </div>
+      <div class="preview-img">
+        <img src="/img/preview.png" alt="미리보기" />
       </div>
-
-      <div class="btn-wrapper">
+      <p>
+        전통방식으로 빚은 다양한<br />
+        전통주를 알아보고<br />나에게 맞는 술도 찾아보자!
+      </p>
+      <div class="sugar-section">
+        <div class="sugar-level">Q. 원하는 당도는?</div>
         <button onclick="location.href='/survey'" class="btn-start">
           테스트 시작하기
         </button>
@@ -76,7 +47,7 @@
         <div class="question">Q. 당신이 선호하는 술의 도수는?</div>
         <div class="question-title">술 도수 취향</div>
         <div class="question-image">
-          <img src="/public/img/question.png" alt="질문" />
+          <img src="/img/question.png" alt="질문" />
         </div>
         <div class="options">
           <div class="option">1. 도수가 낮고 마시기 편한 술</div>
@@ -89,34 +60,35 @@
       <h2>경북 전통주 소개</h2>
       <div class="products">
         <div class="item">
-          <img src="/public/img/drink2.png" alt="경주 별맥" />
+          <img src="/img/drink2.png" alt="경주 별맥" />
           <p>경주 별맥</p>
         </div>
         <div class="item center">
-          <img src="/public/img/drink3.png" alt="대구 불로막걸리" />
+          <img src="/img/drink3.png" alt="대구 불로막걸리" />
           <p class="center-label">대구 불로막걸리</p>
         </div>
         <div class="item">
-          <img src="/public/img/drink1.png" alt="경주 법주" />
+          <img src="/img/drink1.png" alt="경주 법주" />
           <p>경주 법주</p>
         </div>
       </div>
     </section>
 
     <footer>
-      <div class="footer-container">
-        <div class="footer-left">
-          <img src="/public/img/logo.png" alt="로고" class="logo" />
-          <div class="copyright">
-            술빛담<br />
-            대구광역시 동구 화랑로 525<br />
-            Copyright ⓒ 2025 by SULBITDAM. All right reserved
-          </div>
+      <div class="logo">로고</div>
+      <div class="copyright">
+        <br />Copyright ⓒ 2025 by SULBITDAM. All rights reserved.
+      <div class="footer-left">
+        <img src="/img/logo.png" alt="로고" class="logo" />
+        <div class="copyright">
+          술빛담<br />
+          대구광역시 동구 화랑로 525<br />
+          Copyright ⓒ 2025 by SULBITDAM. All right reserved
         </div>
-        <div class="social-icons">
-          <a href=""><img src="/public/img/icon_youtube.png" alt="유튜브" /></a>
-          <a href=""><img src="/public/img/icon_github.png" alt="깃허브" /></a>
-        </div>
+      </div>
+      <div class="social-icons">
+        <a href=""><img src="/img/icon_youtube.png" alt="유튜브" /></a>
+        <a href=""><img src="/img/icon_github.png" alt="깃허브" /></a>
       </div>
     </footer>
   </body>
