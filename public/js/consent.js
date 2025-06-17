@@ -1,51 +1,49 @@
-document
-  .getElementById("consentForm")
-  .addEventListener("submit", async function (e) {
-    e.preventDefault();
+document.getElementById("consentForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
-    let phone = document.getElementById("phone").value.trim();
-    const agree = document.getElementById("agree").checked;
+  const name = document.getElementById("name").value.trim();
+  const tel = document
+    .getElementById("tel")
+    .value.trim()
+    .replace(/[^0-9]/g, ""); // 숫자만 남기기
 
-    if (!name || !phone || !agree) {
-      alert("모든 항목을 입력하고 동의해 주세요.");
-      return;
+  const agree = document.getElementById("agree").checked;
+  if (!agree) {
+    alert("개인정보 수집 및 이용에 동의해주세요.");
+    return;
+  }
+
+  // 로컬스토리지에서 answerId 불러오기
+  const answerId = localStorage.getItem("answerId");
+
+  if (!answerId) {
+    alert("설문 결과가 없습니다. 테스트를 먼저 완료해주세요.");
+    return;
+  }
+
+  try {
+    const res = await fetch("/api/send-message", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name,
+        tel,
+        answerId,
+      }),
+    });
+
+    const data = await res.json();
+    console.log("✅ 서버 응답:", data);
+
+    if (data.success) {
+      // alert("알림톡이 전송되었습니다!");
+      // 결과 페이지로 이동
+      window.location.href = `/result/${answerId}`;
+    } else {
+      alert("전송 실패: " + data.message);
     }
-
-    // 숫자 외 문자 제거 (하이픈, 공백 등)
-    phone = phone.replace(/[^0-9]/g, "");
-
-    // 전화번호 유효성 검사 (숫자 10~11자리)
-    if (!/^01[016789][0-9]{7,8}$/.test(phone)) {
-      alert("올바른 전화번호를 입력해 주세요.");
-      return;
-    }
-
-    try {
-      const answers = JSON.parse(localStorage.getItem("surveyAnswers")) || [];
-
-      const response = await fetch("/api/send-message", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          phone,
-          answers,
-        }),
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        alert("알림톡이 전송되었습니다!");
-        window.location.href = `/result/${data.id}`; // ✅ resultId 포함해서 이동!
-      } else {
-        alert("전송 실패: " + data.message);
-      }
-    } catch (err) {
-      console.error("에러 발생:", err);
-      alert("오류가 발생했습니다. 다시 시도해 주세요.");
-    }
-  });
+  } catch (err) {
+    console.error("❌ 서버 오류:", err);
+    alert("서버 오류가 발생했습니다.");
+  }
+});

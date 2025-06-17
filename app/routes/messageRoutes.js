@@ -1,8 +1,11 @@
+// messageRoutes.js
+
+console.log("📂 messageRoutes 라우터 로딩됨");
+
 const express = require("express");
 const router = express.Router();
+const userInfoController = require("../controllers/userInfoController");
 
-const messageController = require("../controllers/messageController"); // ✅ 전체 객체 불러오기
-
-router.post("/send-message", messageController.sendMessage); // ✅ 함수 연결
+router.post("/send-message", userInfoController.saveUserInfoAndSend);
 
 module.exports = router;
