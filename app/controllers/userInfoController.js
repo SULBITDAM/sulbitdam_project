@@ -3,6 +3,7 @@ const UserAnswer = require("../models/userAnswer");
 const { SolapiMessageService } = require("solapi");
 const dotenv = require("dotenv");
 dotenv.config();
+const baseUrl = process.env.BASE_URL;
 
 const messageService = new SolapiMessageService(
   process.env.API_KEY,
@@ -15,8 +16,7 @@ exports.saveUserInfoAndSend = async (req, res) => {
 
   // 배포후에 배포용 주소로 변경예정
   //   const url = `http://localhost:8080/result/${answerId}`;
-  const baseUrl = process.env.BASE_URL || "http://localhost:8080";
-  const url = `${baseUrl}/result/${answerId}`;
+  const btn_url = `${baseUrl}/result/${answerId}`;
 
   //   const url = "www.naver.com";
   try {
@@ -41,7 +41,7 @@ exports.saveUserInfoAndSend = async (req, res) => {
         variables: {
           "#{name}": name,
           "#{text}": answerData.result.title,
-          "#{url}": url,
+          "#{url}": btn_url,
         },
         disableSms: false,
       },
