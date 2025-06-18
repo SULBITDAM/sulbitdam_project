@@ -12,7 +12,7 @@ const messageService = new SolapiMessageService(
 
 exports.saveUserInfoAndSend = async (req, res) => {
   const { name, tel, answerId } = req.body;
-  console.log("함수 실행됨!");
+  console.log("saveUserInfoAndSend 호출됨", name, tel, answerId);
 
   // 배포후에 배포용 주소로 변경예정
   //   const url = `http://localhost:8080/result/${answerId}`;

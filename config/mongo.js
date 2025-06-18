@@ -8,5 +8,5 @@ const connectDB = async () => {
     console.error("❌ MongoDB 연결 실패", err.message);
   }
 };
-
+mongoose.set("debug", true);
 module.exports = connectDB;
