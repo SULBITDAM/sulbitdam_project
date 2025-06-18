@@ -19,7 +19,7 @@
         </div>
         <div class="content">
           <img
-            src="../public/img/result_img/로고2white.png"
+            src="../public/img/logo_white.png"
             alt="술빛담 로고"
           />
           <h1>대구 불로막걸리</h1>
@@ -41,12 +41,12 @@
 
       <nav>
         <div class="tabs">
-          <a href="resultA" class="active">대구 불로막걸리</a>
-          <a href="resultB">경주 법주</a>
-          <a href="resultC">청도 감 와인</a>
-          <a href="resultD">안동 소주</a>
-          <a href="resultE">문경 풍정사계춘</a>
-          <a href="resultF">경주 별맥</a>
+          <a href="result?id=resultA" class="active">대구 불로막걸리</a>
+          <a href="result?id=resultB">경주 법주</a>
+          <a href="result?id=resultC">청도 감 와인</a>
+          <a href="result?id=resultD">안동 소주</a>
+          <a href="result?id=resultE">문경 풍정사계춘</a>
+          <a href="result?id=resultF">경주 별맥</a>
         </div>
       </nav>
 
@@ -91,7 +91,7 @@
       </section>
 
       <section class="section">
-        <h1>찾아오시는 길</h1>
+        <h1>찾아가는 양조장</h1>
         <div class="map">
           <div class="map-info">
             <p><strong>대구탁주합동 제1공장</strong></p>
@@ -144,59 +144,23 @@
         </div>
       </section>
       <footer>
-        <p>술빛담 | 대구광역시 동구 화랑로 525</p>
-        <p>Copyright © 2025 by SULBITDAM All rights reserved</p>
-      </footer>
+       <div class="footer-container">
+        <div class="footer-left">
+          <img src="/public/img/logo.png" alt="로고" class="logo" />
+          <div class="copyright">
+            술빛담<br />
+            대구광역시 동구 화랑로 525<br />
+            Copyright ⓒ 2025 by SULBITDAM. All right reserved
+          </div>
+        </div>
+        <div class="social-icons">
+          <a href=""><img src="/public/img/icon_youtube.png" alt="유튜브" /></a>
+          <a href=""><img src="/public/img/icon_github.png" alt="깃허브" /></a>
+        </div>
+     
+    </footer>
     </div>
   </body>
-  <script>
-    function toggleMobileMenu() {
-      const menu = document.getElementById("mobileMenu");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
-    }
-
-    window.addEventListener("click", function (e) {
-      const menu = document.getElementById("mobileMenu");
-      const button = document.querySelector(".hamburger");
-      if (
-        menu.style.display === "block" &&
-        !menu.contains(e.target) &&
-        !button.contains(e.target)
-      ) {
-        menu.style.display = "none";
-      }
-    });
-
-    window.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") {
-        document.getElementById("mobileMenu").style.display = "none";
-      }
-    });
-  </script>
-  <script>
-    window.onload = function () {
-      const container = document.getElementById("map");
-      const options = {
-        center: new kakao.maps.LatLng(35.9136434, 128.6425752),
-        level: 4,
-      };
-
-      const map = new kakao.maps.Map(container, options);
-
-      const markerPosition = new kakao.maps.LatLng(35.9136434, 128.6425752);
-
-      const marker = new kakao.maps.Marker({
-        position: markerPosition,
-      });
-
-      marker.setMap(map);
-
-      // 인포윈도우 (말풍선)
-      const infoWindow = new kakao.maps.InfoWindow({
-        content:
-          '<div style="padding:8px;font-size:14px;">대구탁주합동  제1공장</div>',
-      });
-      infoWindow.open(map, marker);
-    };
-  </script>
+  <script src="../public/js/data.js"></script>
+  <script src="../public/js/result.js"></script>
 </html>
