@@ -44,6 +44,24 @@ function renderQuestion(index) {
   progressFill.style.width = `${((index + 1) / questions.length) * 100}%`;
 }
 
+const icon = document.getElementById("progressIcon");
+
+function renderQuestion(index) {
+  const q = questions[index];
+  questionImage.src = q.image;
+  answerButtons[0].textContent = q.options[0];
+  answerButtons[1].textContent = q.options[1];
+
+  const percent = ((index + 1) / questions.length) * 100;
+  progressFill.style.width = `${percent}%`;
+
+  icon.style.left = `calc(${percent}% - 16px)`;
+
+  icon.classList.remove("rotate-shake");
+  void icon.offsetWidth;
+  icon.classList.add("rotate-shake");
+}
+
 answerButtons.forEach((btn, i) => {
   btn.addEventListener("click", () => {
     answers.push(questions[currentIndex].options[i]);
