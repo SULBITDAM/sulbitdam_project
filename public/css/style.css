@@ -11,6 +11,14 @@ footer {
   padding: 16px;
 }
 
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
 /* 전통주 - pc*/
 .hero {
   text-align: center;
@@ -27,9 +35,12 @@ footer {
 
 .row-top {
   display: flex;
-  justify-content: center;
-  gap: 260px; /* 로고와 캐릭터 간 간격 */
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 24px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .logo {
@@ -40,8 +51,32 @@ footer {
 }
 
 .logo img {
-  width: 150px;
-  margin-bottom: 8px;
+  width: 200px;
+  margin-bottom: 5px;
+}
+
+.row-middle,
+.row-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto 24px auto;
+  position: relative;
+}
+
+.row-middle img:first-child {
+  transform: translateX(200px);
+}
+.row-bottom img:first-child {
+  transform: translateX(410px);
+}
+
+.row-middle img:last-child {
+  transform: translateX(-200px);
+}
+.row-bottom img:last-child {
+  transform: translateX(-410px);
 }
 
 .brand {
@@ -50,19 +85,19 @@ footer {
 }
 
 h1 {
-  font-size: 2.2rem;
-  margin: 0;
+  font-size: 2.5rem;
+  margin: 30px 0 0 0;
   font-weight: 700;
 }
 
 .char {
-  width: 100px;
+  width: 130px;
 }
 
 .scroll-down {
-  font-size: 24px;
+  font-size: 2.5rem;
   animation: bounce 1.5s infinite;
-  margin-top: 8px;
+  margin-top: 3px;
 }
 
 @keyframes bounce {
@@ -187,7 +222,9 @@ h1 {
 
 .intro h2 {
   font-size: 2.2rem;
+  text-align: left;
   margin-bottom: 30px;
+  margin-left: 180px;
 }
 
 .intro-body {
@@ -195,8 +232,8 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-direction: row-reverse;
-  gap: 20px;
-  max-width: 500px;
+  gap: 110px;
+  max-width: 600px;
   margin: 0 auto;
   text-align: left;
 }
@@ -206,8 +243,12 @@ h1 {
   flex: 1;
 }
 
+.intro h2 {
+  margin-left: 100px;
+}
+
 .intro-left p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.8;
   margin-bottom: 20px;
 }
@@ -218,13 +259,13 @@ h1 {
   padding: 10px 26px;
   border-radius: 999px;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.4rem;
   display: inline-block;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .intro-right img {
-  width: 220px;
+  width: 250px;
   max-width: 100%;
   margin: 0;
 }
@@ -240,9 +281,10 @@ h1 {
   border: none;
   padding: 14px 50px;
   border-radius: 999px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
+  margin-top: 10px;
   transition: background-color 0.3s;
 }
 
@@ -323,8 +365,10 @@ h1 {
   padding: 30px;
   display: inline-block;
   width: 100%;
-  max-width: 500px;
-  box-sizing: border-box;
+  max-width: 700px;
+  background-color: #f7e1b5;
+  border-radius: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .question {
@@ -332,23 +376,23 @@ h1 {
   border: 2px solid #fcedb3;
   border-radius: 999px;
   padding: 14px 20px;
-  max-width: 320px;
+  max-width: 520px;
   margin: 0 auto 20px;
   font-weight: bold;
   color: #333;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .question-title {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.3rem;
   margin: 16px 0;
   color: #333;
 }
 
 .question-image {
-  height: 320px;
+  height: 400px;
   margin-bottom: 24px;
   overflow: hidden;
   display: flex;
@@ -372,12 +416,12 @@ h1 {
   background-color: #fff;
   border: 2px solid #fcedb3;
   margin: 0 auto;
-  padding: 14px;
+  padding: 12px;
   border-radius: 999px;
   width: 100%;
-  max-width: 320px;
+  max-width: 450px;
   font-weight: bold;
-  font-size: 1.05rem;
+  font-size: 1.3rem;
   color: #333;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   transition: background-color 0.3s;
@@ -391,19 +435,19 @@ h1 {
 /* 태블릿 1200 이하 */
 @media screen and (max-width: 1200px) {
   .card {
-    max-width: 400px;
+    max-width: 600px;
   }
   .question {
-    font-size: 1.05rem;
+    font-size: 1.3rem;
   }
   .question-title {
-    font-size: 17px;
+    font-size: 1.2rem;
   }
   .question-image {
-    height: 280px;
+    height: 320px;
   }
   .option {
-    font-size: 1.02rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -411,12 +455,15 @@ h1 {
 @media screen and (max-width: 768px) {
   .question-preview {
     padding: 60px 20px;
+    background-image: none !important;
     background-color: #fae2af;
   }
 
   .card {
     padding: 20px;
     max-width: 360px;
+    background-color: #fae2af !important;
+    box-shadow: none;
   }
 
   .question {
@@ -455,25 +502,37 @@ h1 {
 
 .introduce h2 {
   margin-bottom: 40px;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  text-align: left;
+  margin-left: 180px;
 }
 
-.products {
+.slider-container {
+  overflow: hidden;
+  max-width: 850px;
+  margin: 0 auto;
+  position: relative;
+  width: fit-content;
+}
+
+.slider-track {
   display: flex;
-  justify-content: center;
   align-items: flex-end;
+  will-change: transform;
   gap: 50px;
 }
 
 .item {
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .item img {
-  width: 130px;
-  height: 130px;
+  width: 170px;
+  height: 170px;
   border-radius: 16px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
   object-fit: cover;
@@ -481,18 +540,18 @@ h1 {
 }
 
 .item p {
-  margin: 0;
+  margin: 0 auto;
   font-size: 1.1rem;
   font-weight: 500;
   color: #333;
 }
 
 .item.center img {
-  width: 150px;
-  height: 150px;
+  width: 210px;
+  height: 210px;
 }
 
-.center-label {
+.item.center p {
   font-size: 1.3rem !important;
   font-weight: 600;
   color: #111;
@@ -501,14 +560,31 @@ h1 {
 
 /* 태블릿 1200 이하 */
 @media screen and (max-width: 1200px) {
+  .introduce h2 {
+    margin-left: 100px;
+  }
+
+  .slider-container {
+    max-width: 690px;
+  }
+
+  .slider-track {
+    gap: 30px;
+  }
+
+  .item {
+    flex: 0 0 200px;
+    margin-right: 30px;
+  }
+
   .item img {
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
   }
 
   .item.center img {
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
   }
 
   .item p {
@@ -535,22 +611,28 @@ h1 {
     margin-bottom: 24px;
   }
 
-  .products {
-    gap: 20px;
-    flex-wrap: nowrap;
+  .slider-container {
+    max-width: 450px;
+  }
+
+  .slider-track {
+    gap: 15px;
+  }
+
+  .item {
+    flex: 0 0 140px;
+    margin-right: 10px;
   }
 
   .item img {
-    width: 90px;
-    height: 90px;
-    margin-bottom: 8px;
+    width: 100px;
+    height: 100px;
   }
 
   .item.center img {
-    width: 110px;
-    height: 110px;
+    width: 120px;
+    height: 120px;
   }
-
   .item p {
     font-size: 0.9rem;
   }
@@ -563,7 +645,7 @@ h1 {
 /* 푸터 -pc */
 footer {
   background-color: #f4dfb5;
-  padding: 10px 20px;
+  padding: 10px;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
@@ -575,7 +657,7 @@ footer {
   align-items: center;
   flex-wrap: nowrap;
   width: 100%;
-  max-width: 600px;
+  max-width: 1200px;
   flex-wrap: nowrap;
 }
 
