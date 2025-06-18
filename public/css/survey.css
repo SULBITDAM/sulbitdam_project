@@ -88,15 +88,13 @@ body {
 }
 
 .question-image {
-  margin-top: 30px;
-  width: 400px;
-  height: 400px;
+  width: 450px;
+  height: 450px;
 }
 .question-image img {
-  width: 400px;
-  height: 400px;
+  width: 450px;
+  height: 450px;
   object-fit: cover;
-  background-color: #ffffff;
   border-radius: 8px;
 }
 
