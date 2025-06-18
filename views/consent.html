@@ -22,6 +22,42 @@
           required
         />
 
+        <!-- 알림톡 수신 동의서 보기 버튼과 내용 추가 -->
+        <button type="button" id="toggleConsent" class="toggle-button">
+          알림톡 수신 동의서 보기
+        </button>
+
+        <div id="consentDetail" class="consent-detail" style="display: none">
+          <section>
+            <h3>- 카카오톡 알림톡 시행에 관한 내용 -</h3>
+            <p>
+              <strong>술빛담</strong>은 설문조사 안내 등 비광고성 정보를<br />
+              <strong>카카오톡 알림톡</strong>을 통해 제공합니다.<br />
+              알림톡 수신이 불가능하거나 수신 차단하신 경우에는<br />
+              <strong>SMS(문자메시지)</strong>로 대체 발송될 수 있습니다.<br />
+              카카오톡을 와이파이가 아닌 <strong>이동통신망</strong>으로 이용할
+              경우,<br />
+              알림톡 수신 중 데이터 요금이 발생할 수 있습니다.<br />
+              알림톡 수신을 원하지 않으실 경우,<br />
+              <strong>카카오톡 채널 설정</strong>에서 알림톡 차단을 설정해
+              주세요.
+            </p>
+            <h3>- 개인정보의 위탁 처리 -</h3>
+            <ul>
+              <li><strong>수탁자</strong>: ㈜솔라피 (Solapi)</li>
+              <li><strong>개인정보 제공처</strong>: 주식회사 카카오</li>
+              <li>
+                <strong>위탁업무 내용</strong>: 카카오톡 알림톡(정보성 메시지)
+                발송 대행
+              </li>
+            </ul>
+            <p>
+              위탁받은 업체는 계약에 따라 개인정보 보호 관련 법령을 준수하며,
+              해당 업무 외의 용도로 개인정보를 사용하지 않습니다.
+            </p>
+          </section>
+        </div>
+
         <label class="checkbox">
           <input type="checkbox" id="agree" required />
           <span>개인정보 수집 및 이용에 동의합니다.</span>

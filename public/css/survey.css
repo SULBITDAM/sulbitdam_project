@@ -1,6 +1,10 @@
+body {
+  background-image: url("../img/bg-section.png");
+}
+
 .survey-container {
-  background-color: #ddd;
-  max-width: 480px;
+  background-color: #fbf0da;
+  max-width: 500px;
   margin: 40px auto;
   padding: 40px 20px;
   border-radius: 12px;
@@ -14,9 +18,9 @@
 
 .icon {
   position: absolute;
-  top: -10px;
+  top: -20px;
   left: 10px;
-  width: 24px;
+  width: 50px;
 }
 
 .progress-track {
@@ -33,16 +37,31 @@
   transition: width 0.3s ease;
 }
 
+.question-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .question-card h2 {
   margin: 20px 0 16px;
 }
+.question-card .answer-buttons {
+  width: 400px;
+  margin-top: 30px;
+}
 
+.question-image {
+  margin-top: 30px;
+  width: 400px;
+  height: 400px;
+}
 .question-image img {
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
   object-fit: cover;
-  background-color: #bbb;
-  margin-bottom: 20px;
+  background-color: #ffffff;
   border-radius: 8px;
 }
 
