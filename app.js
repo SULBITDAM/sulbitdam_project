@@ -11,7 +11,7 @@ const surveyRoutes = require("./app/routes/surveyRoutes");
 app.use(express.json());
 app.use("/", surveyRoutes); // ← 라우터 등록!
 
-app.use(express.static("public"));
+app.use("/public", express.static("public"));
 
 const messageRoutes = require("./app/routes/messageRoutes");
 app.use("/api", messageRoutes);
