@@ -15,10 +15,10 @@ exports.saveUserInfoAndSend = async (req, res) => {
   console.log("saveUserInfoAndSend 호출됨", name, tel, answerId);
 
   // 배포후에 배포용 주소로 변경예정
-  //   const url = `http://localhost:8080/result/${answerId}`;
-  const url = `${baseUrl}/result/${answerId}`;
+  const url = `http://localhost:8080/result/${answerId}`;
+  // const url = `${baseUrl}/result/${answerId}`;
 
-  //   const url = "www.naver.com";
+  // const url = "www.naver.com";
   try {
     const answerData = await UserAnswer.findById(answerId);
     if (!answerData)
@@ -40,7 +40,7 @@ exports.saveUserInfoAndSend = async (req, res) => {
         templateId: process.env.SOLAPI_TEMPLATE_ID,
         variables: {
           "#{name}": name,
-          "#{text}": answerData.result.title,
+          "#{text}": answerData.result.desc,
           "#{url}": url,
         },
         disableSms: false,
