@@ -47,3 +47,19 @@ document.getElementById("consentForm").addEventListener("submit", async (e) => {
     alert("서버 오류가 발생했습니다.");
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("toggleConsent");
+  const detail = document.getElementById("consentDetail");
+
+  toggleBtn.addEventListener("click", () => {
+    if (detail.style.display === "none") {
+      detail.style.display = "block";
+      detail.style.maxHeight = detail.scrollHeight + "px";
+      toggleBtn.textContent = "알림톡 수신 동의서 닫기";
+    } else {
+      detail.style.display = "none";
+      toggleBtn.textContent = "알림톡 수신 동의서 보기";
+    }
+  });
+});
