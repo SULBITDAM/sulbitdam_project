@@ -1,29 +1,29 @@
 // 질문 데이터
 const questions = [
   {
-    text: "당신이 선호하는 술의 도수는?",
+    text: "어떤 향을 선호하시나요?",
     image: "/public/img/q1.png",
-    options: ["도수가 낮고 부드러운 술", "도수가 높고 강렬한 술"], // ✅ 수정됨
+    options: ["달콤한 향", "산뜻한 향"],
   },
   {
-    text: "술을 마시는 가장 큰 이유는?",
+    text: "선호하는 도수는?",
     image: "/public/img/q2.png",
-    options: ["가볍게 기분내고 싶어서", "진하게 취하고 생각도 잊고 싶어서"],
+    options: ["도수 낮은 술", "도수 높은 술"],
   },
   {
-    text: "술을 고를 때 당신의 기준은?",
+    text: "어떤 자리에서 마시고 싶나요?",
     image: "/public/img/q3.png",
-    options: ["맛있고 마시기 쉬운 술이면 OK", "향, 깊이, 여운까지 중요하다"], // ✅ 조건에 맞춰 수정됨
+    options: ["조용한 혼술", "친구들과 파티"],
   },
   {
-    text: "혼술과 술자리 중 어느쪽이 더 좋은가요?",
+    text: "술과 어울리는 음식은?",
     image: "/public/img/q4.png",
-    options: ["함께 마시며 수다 떠는 시간", "혼자 조용히 마시며 생각하는 시간"],
+    options: ["달콤한 안주", "매운 안주"],
   },
   {
-    text: "입맛에 더 끌리는 쪽은?",
+    text: "술을 마실 때 기분은?",
     image: "/public/img/q5.png",
-    options: ["달콤하거나 상큼한 맛", "구수하거나 진한 맛"],
+    options: ["힐링하고 싶다", "즐기고 싶다"],
   },
 ];
 
@@ -52,26 +52,9 @@ answerButtons.forEach((btn, i) => {
     if (currentIndex < questions.length) {
       renderQuestion(currentIndex);
     } else {
-      // 🎯 마지막 질문 후 서버에 답변 저장
-      fetch("/api/save-answer", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ answers }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.success) {
-            localStorage.setItem("surveyAnswers", JSON.stringify(answers));
-            localStorage.setItem("answerId", data.id); // ✔️ 이거 중요
-            location.href = "/consent"; // 다음 페이지로
-          } else {
-            alert("설문 저장 실패");
-          }
-        })
-        .catch((err) => {
-          console.error("❌ 설문 저장 에러:", err);
-          alert("서버 오류 발생");
-        });
+      // 결과 전달 방식은 이후 서버 연동 가능
+      localStorage.setItem("surveyAnswers", JSON.stringify(answers));
+      location.href = "/consent";
     }
   });
 });
