@@ -312,7 +312,8 @@ h1 {
   .intro,
   .question-preview,
   .introduce {
-    background-image: none;
+    /* background-image: none; */
+    background-size: 100% auto;
   }
 
   .intro::before,

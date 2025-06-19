@@ -1,5 +1,7 @@
 body {
-  background-image: url("../img/bg-section.png");
+  background-image: url("../img/background.png");
+  background-size: cover;
+  background-position: top center;
   display: flex;
   flex-direction: column; /* ✅ 가로 아닌 세로 정렬 */
   align-items: center; /* ✅ 가운데 정렬 */
