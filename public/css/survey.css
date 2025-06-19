@@ -1,5 +1,11 @@
 body {
   background-image: url("../img/bg-section.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+  padding: 40px;
 }
 
 .survey-container {
@@ -82,7 +88,7 @@ body {
 .question-card h2 {
   margin: 10px 0 16px;
 }
-.question-card .answer-buttons {
+.question-card {
   width: 400px;
   margin-top: 10px;
 }
@@ -100,6 +106,7 @@ body {
 
 .answer-buttons {
   display: flex;
+  width: 400px;
   flex-direction: column;
   gap: 12px;
 }
@@ -115,4 +122,49 @@ body {
 
 .answer-btn:hover {
   background-color: #fef2d5;
+}
+@media (max-width: 480px) {
+  .survey-container {
+    width: 90%;
+    padding: 20px 16px;
+    margin: 0 auto;
+  }
+
+  .progress-bar {
+    height: 28px;
+  }
+
+  .icon {
+    width: 36px;
+    height: 36px;
+    top: -14px;
+  }
+  .question-card {
+    width: 95%;
+  }
+
+  .question-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .question-image img {
+    width: 90%;
+    height: 160px;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .answer-buttons {
+    width: 80%;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .answer-btn {
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 16px;
+  }
 }

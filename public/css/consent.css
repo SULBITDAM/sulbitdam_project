@@ -74,3 +74,41 @@ button {
 ul {
   text-align: start;
 }
+
+@media (max-width: 480px) {
+  body {
+    padding: 20px;
+  }
+
+  .consent-container {
+    padding: 20px;
+    box-shadow: none;
+    border-radius: 8px;
+  }
+
+  h2 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  input[type="text"],
+  input[type="tel"] {
+    font-size: 15px;
+    padding: 8px;
+  }
+
+  .checkbox {
+    font-size: 13px;
+  }
+
+  button,
+  .toggle-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .consent-detail {
+    font-size: 13px;
+    padding: 14px;
+  }
+}
