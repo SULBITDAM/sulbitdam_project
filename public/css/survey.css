@@ -1,8 +1,10 @@
 body {
   background-image: url("../img/bg-section.png");
   display: flex;
-
-  padding: 40px;
+  flex-direction: column; /* ✅ 가로 아닌 세로 정렬 */
+  align-items: center; /* ✅ 가운데 정렬 */
+  justify-content: center;
+  overflow: hidden;
 }
 
 .survey-container {
