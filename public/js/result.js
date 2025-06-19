@@ -31,7 +31,8 @@ window.addEventListener("click", function (e) {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  let id;
+  const pathId = window.location.pathname.split("/").pop(); // resultD 같은 값
+  const id = pathId || "resultA";
 
   // URL의 pathname에서 id=resultX 추출
   const pathLast = window.location.pathname.split("/").pop();

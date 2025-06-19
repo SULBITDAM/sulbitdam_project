@@ -7,7 +7,9 @@ body {
 
 .consent-container {
   max-width: 400px;
+
   margin: auto;
+  margin-top: 30px;
   background-color: white;
   padding: 30px;
   border-radius: 12px;
@@ -73,4 +75,7 @@ button {
 }
 ul {
   text-align: start;
+}
+.consent_logo {
+  width: 30%;
 }

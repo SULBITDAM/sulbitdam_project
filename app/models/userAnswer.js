@@ -4,6 +4,7 @@ const UserAnswerSchema = new mongoose.Schema({
   answers: [String],
   result: {
     title: String,
+    resultId: String,
     desc: String,
     image: String,
   },
