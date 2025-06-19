@@ -123,7 +123,7 @@ body {
 @media (max-width: 480px) {
   .survey-container {
     width: 90%;
-    height: 90vh;
+    height: auto;
     padding: 20px 16px;
     margin: 0 auto;
   }
@@ -142,17 +142,15 @@ body {
   }
 
   .question-image {
-    width: 150%;
-    height: 300px;
+    width: 140%;
+    height: 400px;
   }
 
   .question-image img {
     width: 80%;
     height: auto;
-    max-height: 300px;
     object-fit: cover;
     border-radius: 6px;
-    margin: 0;
   }
 
   .answer-buttons {
