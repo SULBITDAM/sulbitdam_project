@@ -145,63 +145,49 @@
     <!-- 전통주 슬라이더 -->
     <script>
       const track = document.querySelector(".slider-track");
-      const items = Array.from(track.children);
-      const visibleCount = 3;
-      const itemWidth = 250 + 50; // 이미지 너비 + 간격
-      let index = 0;
+      let items = Array.from(track.children);
 
-      // 복제 요소 삽입 (처음 몇 개 복제해서 끝에 붙임)
-      const clones = items
-        .slice(0, visibleCount)
-        .map((item) => item.cloneNode(true));
-      clones.forEach((clone) => track.appendChild(clone));
+      function getItemWidth() {
+        const item = track.querySelector(".item");
+        const style = window.getComputedStyle(track);
+        const gap = parseInt(style.columnGap || style.gap || 0);
+        return item.offsetWidth + gap;
+      }
 
-      const totalItems = items.length + clones.length;
+      function applyCenterClass() {
+        items.forEach((el) => el.classList.remove("center"));
+        if (items[1]) items[1].classList.add("center"); // 항상 두 번째 요소에 center 적용
+      }
 
-      function updateSlider() {
-        const translateX = -itemWidth * index;
+      function moveSlider() {
+        const itemWidth = getItemWidth();
+
+        // 슬라이더 이동
         track.style.transition = "transform 0.5s ease";
-        track.style.transform = `translateX(${translateX}px)`;
+        track.style.transform = `translateX(-${itemWidth}px)`;
 
-        // center 클래스 적용
-        const trueIndex = index % items.length;
-        const centerIdx = (trueIndex + 1) % items.length;
-
-        track
-          .querySelectorAll(".item")
-          .forEach((el) => el.classList.remove("center"));
-        const currentItems = track.querySelectorAll(".item");
-        if (currentItems[index + 1]) {
-          currentItems[index + 1].classList.add("center");
-        }
-      }
-
-      function resetSlider() {
-        // 순간적으로 원래 위치로 복귀
-        track.style.transition = "none";
-        index = 0;
-        track.style.transform = `translateX(0px)`;
-
-        // 다시 애니메이션 적용
+        // 이동 후 DOM 순서 변경
         setTimeout(() => {
-          track.style.transition = "transform 0.5s ease";
-          index++;
-          updateSlider();
-        }, 50);
+          const first = items.shift();
+          track.appendChild(first);
+
+          track.style.transition = "none";
+          track.style.transform = `translateX(0)`;
+
+          items.push(first);
+          applyCenterClass();
+        }, 500);
       }
 
-      // 초기 적용
-      updateSlider();
+      window.addEventListener("load", () => {
+        applyCenterClass();
+        setInterval(moveSlider, 2500);
+      });
 
-      // 인터벌 실행
-      setInterval(() => {
-        index++;
-        if (index > items.length) {
-          resetSlider(); // 복제된 마지막 슬라이드까지 갔을 때 리셋
-        } else {
-          updateSlider();
-        }
-      }, 2500);
+      window.addEventListener("resize", () => {
+        track.style.transition = "none";
+        track.style.transform = `translateX(0)`;
+      });
     </script>
   </body>
 </html>
