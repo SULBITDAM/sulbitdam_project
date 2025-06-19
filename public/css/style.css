@@ -129,8 +129,22 @@ h1 {
     font-size: 1rem;
   }
 
-  h1 {
-    font-size: 1.8rem;
+  .container h1 {
+    font-size: 1.7rem;
+  }
+
+  .row-middle img:first-child {
+    transform: translateX(140px);
+  }
+  .row-bottom img:first-child {
+    transform: translateX(250px);
+  }
+
+  .row-middle img:last-child {
+    transform: translateX(-140px);
+  }
+  .row-bottom img:last-child {
+    transform: translateX(-250px);
   }
 }
 
@@ -179,6 +193,10 @@ h1 {
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     justify-items: center;
+  }
+
+  .container h1 {
+    font-size: 1.5rem;
   }
 
   .scroll-down {
@@ -352,7 +370,7 @@ h1 {
   }
 }
 
-/* 질문 */
+/* 테스트 시작 */
 .question-preview {
   padding: 80px 20px;
   text-align: center;
@@ -398,7 +416,7 @@ h1 {
 }
 
 .question-image img {
-  height: 300px;
+  height: 380px;
   object-fit: contain;
   margin-bottom: 24px;
   margin-top: 70px;
@@ -448,7 +466,7 @@ h1 {
     font-size: 1.2rem;
   }
   .question-image img {
-    height: 200px;
+    height: 320px;
     object-fit: contain;
     margin-bottom: 24px;
     margin-top: 70px;
@@ -497,7 +515,7 @@ h1 {
     gap: 12px;
   }
   .question-image img {
-    height: 150px;
+    height: 200px;
     object-fit: contain;
     margin-bottom: 24px;
     margin-top: 70px;
