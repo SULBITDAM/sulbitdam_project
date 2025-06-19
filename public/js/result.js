@@ -125,3 +125,25 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   infoWindow.open(map, marker);
 });
+
+// 애니메이션
+// 요소가 10% 이상 보이면 visible 클래스 추가
+document.addEventListener("DOMContentLoaded", () => {
+  const observerOptions = {
+    threshold: 0.1,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, observerOptions);
+
+  const contentEl = document.querySelector("header .content");
+  const introTextEl = document.querySelector(".intro div");
+
+  if (contentEl) observer.observe(contentEl);
+  if (introTextEl) observer.observe(introTextEl);
+});
