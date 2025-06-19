@@ -177,7 +177,7 @@ h1 {
   .characters-mobile {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 15px;
     justify-items: center;
     margin: 20px 0;
   }
@@ -188,15 +188,8 @@ h1 {
     margin-bottom: 20px;
   }
 
-  .characters-mobile {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    justify-items: center;
-  }
-
   .container h1 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .scroll-down {
@@ -620,7 +613,7 @@ h1 {
     font-size: 1rem;
   }
 
-  .center-label {
+  .item.center p {
     font-size: 1.15rem !important;
   }
 
@@ -642,16 +635,16 @@ h1 {
   }
 
   .slider-container {
-    max-width: 450px;
+    max-width: 350px;
   }
 
   .slider-track {
-    gap: 10px;
+    gap: 15px;
     margin: 0;
   }
 
   .item {
-    flex: 0 0 140px;
+    flex: 0 0 100px;
   }
 
   .item img {
@@ -664,11 +657,11 @@ h1 {
     height: 120px;
   }
   .item p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
-  .center-label {
-    font-size: 1.05rem !important;
+  .item.center p {
+    font-size: 1rem !important;
   }
 }
 
