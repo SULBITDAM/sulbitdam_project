@@ -645,7 +645,7 @@ h1 {
   }
 
   .slider-container {
-    max-width: 350px;
+    max-width: 310px;
   }
 
   .slider-track {
@@ -657,8 +657,8 @@ h1 {
   }
 
   .item img {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
   }
 
   .item.center img {
