@@ -1,17 +1,162 @@
-const resultId = window.location.pathname.split("/").pop();
+// const resultId = window.location.pathname.split("/").pop();
 
-fetch(`/api/result/${resultId}`)
-  .then((res) => res.json())
-  .then((data) => {
-    const result = data.result;
-    if (!result) throw new Error("결과 없음");
+// fetch(`/api/result/${resultId}`)
+//   .then((res) => res.json())
+//   .then((data) => {
+//     const answers = data.answers;
 
-    document.getElementById("resultTitle").textContent = result.title;
-    document.getElementById("resultDesc").textContent = result.desc;
-    document.getElementById("resultImage").src = result.image;
-    document.getElementById("resultImage").alt = result.title;
-  })
-  .catch((err) => {
-    alert("결과를 불러오지 못했습니다.");
-    console.error(err);
+//     // 예시
+//     document.getElementById("resultTitle").textContent = "복분자주";
+//   })
+//   .catch((err) => {
+//     alert("결과를 불러오지 못했습니다.");
+//     console.error(err);
+//   });
+
+function toggleMobileMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+window.addEventListener("click", function (e) {
+  const menu = document.getElementById("mobileMenu");
+  const button = document.querySelector(".hamburger");
+  if (
+    menu.style.display === "block" &&
+    !menu.contains(e.target) &&
+    !button.contains(e.target)
+  ) {
+    menu.style.display = "none";
+  }
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  let id;
+
+  // URL의 pathname에서 id=resultX 추출
+  const pathLast = window.location.pathname.split("/").pop();
+  const match = pathLast.match(/id=(result\w+)/);
+  if (match) {
+    id = match[1];
+  }
+
+  // 기본값
+  if (!id) id = "resultA";
+
+  // 탭 active 처리
+  document.querySelectorAll(".tabs a").forEach((a) => {
+    const href = a.getAttribute("href"); // 예: "id=resultB"
+    const match = href.match(/id=(result\w+)/);
+    const hrefId = match ? match[1] : null;
+
+    if (hrefId === id) {
+      a.classList.add("active");
+    } else {
+      a.classList.remove("active");
+    }
   });
+
+  const data = liquorData[id];
+
+  if (!data) {
+    alert("해당 술 정보를 찾을 수 없습니다.");
+    return;
+  }
+  document.querySelector(
+    "header"
+  ).style.backgroundImage = `url(${data.headerImage})`;
+  document.title = data.title;
+  // Header
+  document.querySelector("header h1").textContent = data.title;
+  document.querySelector("header p").textContent = data.description;
+
+  // Info
+  document.querySelector(".char").src = data.img;
+  document.querySelector(".details").innerHTML = `
+    <p><strong>종류:</strong> ${data.type}</p>
+    <p><strong>원재료:</strong> ${data.ingredients}</p>
+    <p><strong>알콜도수:</strong> ${data.alcohol}</p>
+    <p><strong>용량:</strong> ${data.volume}</p>
+    <p><a href="${data.homepage}" target="_blank">공식 홈페이지</a></p>
+  `;
+
+  // 소개 이미지
+  document.querySelector(".intro img").src = data.introImage;
+
+  // 소개 문단
+  const introTextContainer = document.querySelector(".intro div");
+  introTextContainer.innerHTML = data.introParagraphs
+    .map(
+      (p, i) =>
+        `<p${
+          i === 0 ? ' style="font-weight:bold;font-size:24px;"' : ""
+        }>${p}</p>`
+    )
+    .join("");
+
+  // 찾아가는 양조장 정보 렌더링
+  const mapInfoEl = document.querySelector(".map-info");
+  const mapInfo = data.map.info;
+
+  mapInfoEl.innerHTML = `
+  <p><strong>${data.map.label}</strong></p>
+  ${mapInfo.address ? `<p>${mapInfo.address}</p>` : ""}
+  ${mapInfo.tel ? `<p><span>T.</span>${mapInfo.tel}</p>` : ""}
+  ${mapInfo.fax ? `<p><span>F.</span>${mapInfo.fax}</p>` : ""}
+  ${mapInfo.email ? `<p><span>E.</span>${mapInfo.email}</p>` : ""}
+`;
+
+  // 최신 소식
+  const newsList = document.querySelector(".news-list");
+  newsList.innerHTML = data.news
+    .map(
+      (item) => `
+        <a href="${item.link}" target="_blank">
+          <div class="item">
+            <img src="${item.img}" alt="${item.title}" />
+            <p>${item.title}</p>
+          </div>
+        </a>
+      `
+    )
+    .join("");
+
+  // 지도 초기화
+  const container = document.getElementById("map");
+  const options = {
+    center: new kakao.maps.LatLng(data.map.lat, data.map.lng),
+    level: 4,
+  };
+
+  const map = new kakao.maps.Map(container, options);
+  const markerPosition = new kakao.maps.LatLng(data.map.lat, data.map.lng);
+  const marker = new kakao.maps.Marker({ position: markerPosition });
+  marker.setMap(map);
+
+  const infoWindow = new kakao.maps.InfoWindow({
+    content: `<div style="padding:8px;font-size:14px;">${data.map.label}</div>`,
+  });
+  infoWindow.open(map, marker);
+});
+
+// 애니메이션
+// 요소가 10% 이상 보이면 visible 클래스 추가
+document.addEventListener("DOMContentLoaded", () => {
+  const observerOptions = {
+    threshold: 0.1,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, observerOptions);
+
+  const contentEl = document.querySelector("header .content");
+  const introTextEl = document.querySelector(".intro div");
+
+  if (contentEl) observer.observe(contentEl);
+  if (introTextEl) observer.observe(introTextEl);
+});
