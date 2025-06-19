@@ -209,7 +209,7 @@ const liquorData = {
     ],
     news: [
       {
-        img: "../public/img/result_img/E/party1.jpg",
+        img: "../public/img/result_img/E/party1.png",
         title: "풍정사계 춘 대통령상 수상",
         link: "https://www.newstnt.com/news/articleView.html?idxno=90569",
       },
