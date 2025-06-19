@@ -31,7 +31,12 @@ window.addEventListener("click", function (e) {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
+<<<<<<< Updated upstream
   let id;
+=======
+  const pathId = window.location.pathname.split("/").pop(); // resultD 같은 값
+  const id = pathId || "resultA";
+>>>>>>> Stashed changes
 
   // URL의 pathname에서 id=resultX 추출
   const pathLast = window.location.pathname.split("/").pop();

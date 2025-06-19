@@ -8,14 +8,19 @@ document.getElementById("consentForm").addEventListener("submit", async (e) => {
     .replace(/[^0-9]/g, ""); // 숫자만 남기기
 
   const agree = document.getElementById("agree").checked;
+  // ✅ 이름 유효성 검사 (한글 또는 영문만 허용)
+  const nameRegex = /^[가-힣a-zA-Z\s]+$/;
+  if (!nameRegex.test(name)) {
+    alert("이름은 한글 또는 영문만 입력 가능합니다.");
+    return;
+  }
+
   if (!agree) {
     alert("개인정보 수집 및 이용에 동의해주세요.");
     return;
   }
 
-  // 로컬스토리지에서 answerId 불러오기
   const answerId = localStorage.getItem("answerId");
-
   if (!answerId) {
     alert("설문 결과가 없습니다. 테스트를 먼저 완료해주세요.");
     return;
@@ -33,17 +38,18 @@ document.getElementById("consentForm").addEventListener("submit", async (e) => {
     });
 
     const data = await res.json();
+    console.log(data.result.resultId);
     console.log("✅ 서버 응답:", data);
 
-    if (data.success) {
-      // alert("알림톡이 전송되었습니다!");
-      // 결과 페이지로 이동
-      window.location.href = `/result/${answerId}`;
+    if (data.success && data.result?.resultId) {
+      // 결과 페이지로 이동 (서버에서 받은 resultId 사용)
+      window.location.href = `/result/${data.result.resultId}`;
     } else {
-      alert("전송 실패: " + data.message);
+      alert("전송 실패: " + (data.message || "결과 정보가 부족합니다."));
     }
   } catch (err) {
     console.error("❌ 서버 오류:", err);
+    console.log(data);
     alert("서버 오류가 발생했습니다.");
   }
 });
