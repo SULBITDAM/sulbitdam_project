@@ -162,11 +162,17 @@
       function moveSlider() {
         const itemWidth = getItemWidth();
 
+        // 먼저 center 클래스 적용 (슬라이드 이동과 동시에 커짐)
+        const nextCenterIndex = 2 % items.length;
+        items.forEach((el) => el.classList.remove("center"));
+        if (items[nextCenterIndex])
+          items[nextCenterIndex].classList.add("center");
+
         // 슬라이더 이동
         track.style.transition = "transform 0.5s ease";
         track.style.transform = `translateX(-${itemWidth}px)`;
 
-        // 이동 후 DOM 순서 변경
+        // 이동 후 DOM 재배치
         setTimeout(() => {
           const first = items.shift();
           track.appendChild(first);
@@ -175,10 +181,8 @@
           track.style.transform = `translateX(0)`;
 
           items.push(first);
-          applyCenterClass();
         }, 500);
       }
-
       window.addEventListener("load", () => {
         applyCenterClass();
         setInterval(moveSlider, 2500);
