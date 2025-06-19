@@ -31,11 +31,24 @@ window.addEventListener("click", function (e) {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get("id") || "resultA"; // 기본값은 resultA
+  let id;
 
+  // URL의 pathname에서 id=resultX 추출
+  const pathLast = window.location.pathname.split("/").pop();
+  const match = pathLast.match(/id=(result\w+)/);
+  if (match) {
+    id = match[1];
+  }
+
+  // 기본값
+  if (!id) id = "resultA";
+
+  // 탭 active 처리
   document.querySelectorAll(".tabs a").forEach((a) => {
-    const hrefId = new URL(a.href).searchParams.get("id");
+    const href = a.getAttribute("href"); // 예: "id=resultB"
+    const match = href.match(/id=(result\w+)/);
+    const hrefId = match ? match[1] : null;
+
     if (hrefId === id) {
       a.classList.add("active");
     } else {
