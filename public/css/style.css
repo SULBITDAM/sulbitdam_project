@@ -398,10 +398,10 @@ h1 {
 }
 
 .question-image img {
-  height: 300px;
+  height: 400px;
   object-fit: contain;
   margin-bottom: 24px;
-  margin-top: 70px;
+  margin-top: 10px;
 }
 
 .options {
@@ -442,16 +442,16 @@ h1 {
     font-size: 1.2rem;
   }
   .question-image {
-    height: 320px;
+    height: 400px;
   }
   .option {
     font-size: 1.2rem;
   }
   .question-image img {
-    height: 200px;
+    height: 400px;
     object-fit: contain;
     margin-bottom: 24px;
-    margin-top: 70px;
+    margin-top: 10px;
   }
 }
 
@@ -497,10 +497,14 @@ h1 {
     gap: 12px;
   }
   .question-image img {
-    height: 150px;
+    height: 200px;
     object-fit: contain;
     margin-bottom: 24px;
-    margin-top: 70px;
+    margin-top: 10px;
+  }
+  .card {
+    width: 100%;
+    max-width: 80%;
   }
 }
 
