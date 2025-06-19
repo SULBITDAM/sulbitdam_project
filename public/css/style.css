@@ -449,6 +449,12 @@ h1 {
   .option {
     font-size: 1.2rem;
   }
+  .question-image img {
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 24px;
+    margin-top: 70px;
+  }
 }
 
 /* 모바일 768 이하*/
@@ -491,6 +497,12 @@ h1 {
 
   .options {
     gap: 12px;
+  }
+  .question-image img {
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 24px;
+    margin-top: 70px;
   }
 }
 
