@@ -1,16 +1,13 @@
 body {
   background-image: url("../img/bg-section.png");
   display: flex;
-  justify-content: center;
-  align-items: center;
 
-  min-height: 100vh;
   padding: 40px;
 }
 
 .survey-container {
   background-color: #fbf0da;
-  max-width: 500px;
+  max-width: 600px;
   margin: 20px auto;
   padding: 40px 20px;
   border-radius: 12px;
@@ -126,6 +123,7 @@ body {
 @media (max-width: 480px) {
   .survey-container {
     width: 90%;
+    height: 90vh;
     padding: 20px 16px;
     margin: 0 auto;
   }
@@ -144,16 +142,17 @@ body {
   }
 
   .question-image {
-    width: 100%;
-    height: auto;
+    width: 150%;
+    height: 300px;
   }
 
   .question-image img {
-    width: 90%;
-    height: 200px;
+    width: 80%;
+    height: auto;
     max-height: 300px;
     object-fit: cover;
     border-radius: 6px;
+    margin: 0;
   }
 
   .answer-buttons {
@@ -163,7 +162,7 @@ body {
   }
 
   .answer-btn {
-    font-size: 11px;
+    font-size: 12px;
     padding: 10px;
     border-radius: 16px;
   }
