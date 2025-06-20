@@ -158,6 +158,22 @@ nav .tabs a.active::after {
 .info .details p {
   margin-bottom: 8px;
   font-size: 18px;
+  position: relative;
+  padding-left: 20px;
+}
+.info .details p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background-color: #6b4a3e;
+}
+.info .details p:last-child::before {
+  content: none;
 }
 .info .details p:first-child {
   margin-top: 0px;
@@ -192,6 +208,8 @@ nav .tabs a.active::after {
 .info .details strong {
   display: inline-block;
   width: 80px;
+  border-right: 1px solid #acacac;
+  margin-right: 10px;
 }
 /* 소개 */
 .intro {
@@ -258,6 +276,10 @@ nav .tabs a.active::after {
   height: 380px;
   object-fit: cover;
   object-position: top;
+  transition: transform 0.3s ease;
+}
+.news-list img:hover {
+  transform: scale(1.05);
 }
 .news-list p {
   margin-top: 20px;
@@ -281,7 +303,7 @@ nav .tabs a.active::after {
 /* 푸터 -pc */
 footer {
   background-color: #f4dfb5;
-  padding: 10px 20px;
+  padding: 10px;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
@@ -293,7 +315,7 @@ footer {
   align-items: center;
   flex-wrap: nowrap;
   width: 100%;
-  max-width: 600px;
+  max-width: 1200px;
   flex-wrap: nowrap;
 }
 
@@ -337,7 +359,7 @@ footer {
 }
 
 /* 태블릿 */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
   header {
     height: 300px;
   }

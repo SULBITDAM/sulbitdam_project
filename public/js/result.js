@@ -31,12 +31,20 @@ window.addEventListener("click", function (e) {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
+<<<<<<< Updated upstream
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id") || "resultA"; // 기본값은 resultA
 
   document.querySelectorAll(".tabs a").forEach((a) => {
     const hrefId = new URL(a.href).searchParams.get("id");
     if (hrefId === id) {
+=======
+  let id = window.location.pathname.split("/").pop() || "resultA";
+
+  document.querySelectorAll(".tabs a, #mobileMenu a").forEach((a) => {
+    const href = a.getAttribute("href");
+    if (href === id) {
+>>>>>>> Stashed changes
       a.classList.add("active");
     } else {
       a.classList.remove("active");
@@ -44,7 +52,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   const data = liquorData[id];
-
   if (!data) {
     alert("해당 술 정보를 찾을 수 없습니다.");
     return;
@@ -60,10 +67,10 @@ window.addEventListener("DOMContentLoaded", () => {
   // Info
   document.querySelector(".char").src = data.img;
   document.querySelector(".details").innerHTML = `
-    <p><strong>종류:</strong> ${data.type}</p>
-    <p><strong>원재료:</strong> ${data.ingredients}</p>
-    <p><strong>알콜도수:</strong> ${data.alcohol}</p>
-    <p><strong>용량:</strong> ${data.volume}</p>
+    <p><strong>종류</strong> ${data.type}</p>
+    <p><strong>원재료</strong> ${data.ingredients}</p>
+    <p><strong>알콜도수</strong> ${data.alcohol}</p>
+    <p><strong>용량</strong> ${data.volume}</p>
     <p><a href="${data.homepage}" target="_blank">공식 홈페이지</a></p>
   `;
 

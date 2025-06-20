@@ -1,18 +1,117 @@
 body {
   margin: 0;
   font-family: "Pretendard", sans-serif;
+<<<<<<< Updated upstream
   background-color: #f8f5ef;
+=======
+  background-color: #fbf0da;
+>>>>>>> Stashed changes
   color: #333;
 }
-
+#wrap {
+  background-image: url("../img/background.png");
+  background-size: 3000px auto;
+  background-repeat: repeat;
+  background-position: top center;
+}
 header,
 footer {
   text-align: center;
   padding: 16px;
+<<<<<<< Updated upstream
   background-color: #f5f5f5;
+=======
 }
 
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.intro,
+.question-preview,
+.introduce {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  display: flow-root;
+}
+/* 전통주 - pc*/
+.hero {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  color: white;
+}
+.fixed-content {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.fixed-content .main_logo img {
+  width: 220px;
+}
+
+.fixed-content h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  width: 600%; /* 6장 * 100% */
+  height: 100%;
+  transition: transform 1s ease;
+>>>>>>> Stashed changes
+}
+
+.slide {
+  flex: 0 0 calc(100% / 6); /* 슬라이드 한 장 너비: 전체 너비의 1/6 */
+  height: 100%;
+  position: relative;
+}
+.slide .bg {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* 이미지 비율 유지하며 꽉 채우기 */
+  display: block;
+}
+.bg-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  pointer-events: none; /* 클릭 막기 */
+}
+.slide .char {
+  position: absolute;
+  bottom: 60px;
+  right: 20px; /* 왼쪽 대신 오른쪽에서 20px 떨어진 위치 */
+  transform: none; /* translateX 제거 */
+  width: 180px;
+  z-index: 5;
+}
 .logo {
+<<<<<<< Updated upstream
   font-weight: bold;
 }
 
@@ -20,6 +119,22 @@ footer {
   text-align: center;
   background-color: #f7e1b5;
   padding: 40px 20px;
+=======
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  width: 200px;
+  margin-bottom: 5px;
+}
+h1 {
+  font-size: 2.5rem;
+  margin: 30px 0 0 0;
+  font-weight: 700;
+>>>>>>> Stashed changes
 }
 
 .characters img {
@@ -31,6 +146,11 @@ footer {
   font-size: 24px;
   margin-top: 12px;
   animation: bounce 1.5s infinite;
+<<<<<<< Updated upstream
+=======
+  margin-top: 160px;
+  color: white;
+>>>>>>> Stashed changes
 }
 
 @keyframes bounce {
@@ -43,14 +163,162 @@ footer {
   }
 }
 
+<<<<<<< Updated upstream
+=======
+.characters-mobile,
+.mobile-header {
+  display: none;
+}
+
+/* 태블릿 1200 이하 */
+@media screen and (max-width: 1200px) {
+  .char {
+    width: 80px;
+  }
+
+  .logo img {
+    width: 120px;
+  }
+
+  .brand {
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* 모바일 768 이하*/
+@media screen and (max-width: 768px) {
+  .row-top,
+  .row-middle,
+  .row-bottom {
+    display: none;
+  }
+
+  .mobile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .mobile-logo img {
+    width: 130px;
+  }
+
+  .mobile-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 30px 0;
+  }
+
+  .characters-mobile {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+    margin: 20px 0;
+  }
+
+  .characters-mobile img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .characters-mobile {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    justify-items: center;
+  }
+
+  .scroll-down {
+    margin-top: 12px;
+  }
+}
+
+/* 테스트 -pc */
+/* .intro,
+.question-preview,
+.introduce {
+  background-image: url("/public/img/bg-section.png");
+  background-repeat: repeat;
+  background-size: 75% auto;
+  background-position: top left;
+  background-size: auto;
+  background-color: transparent;
+} */
+
+.intro,
+.question-preview,
+.introduce {
+  position: relative;
+  z-index: 0;
+}
+
+>>>>>>> Stashed changes
 .intro {
   text-align: center;
   padding: 40px 20px;
 }
 
+<<<<<<< Updated upstream
 .preview-img img {
   width: 150px;
   margin: 20px 0;
+=======
+.intro h2 {
+  font-size: 30px;
+  text-align: left;
+}
+
+.intro-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 110px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.intro-left,
+.intro-right {
+  flex: 1;
+}
+
+.intro-left p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.sugar-level {
+  background-color: #fff3b0;
+  color: #333;
+  padding: 10px 26px;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 1.4rem;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.intro-right img {
+  width: 250px;
+  max-width: 100%;
+  margin: 0;
+}
+
+.btn-wrapper {
+  text-align: center;
+  margin-top: 40px;
+>>>>>>> Stashed changes
 }
 
 .btn-start {
@@ -67,6 +335,71 @@ footer {
   background-color: #333;
 }
 
+<<<<<<< Updated upstream
+=======
+/* 모바일 768 이하*/
+@media screen and (max-width: 768px) {
+  .intro,
+  .question-preview,
+  .introduce {
+    background-image: none;
+  }
+
+  .intro::before,
+  .question-preview::before,
+  .introduce::before {
+    display: none;
+  }
+
+  .intro-body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .intro-right {
+    width: 180px;
+    line-height: 0;
+  }
+
+  .intro-right img {
+    width: 180px;
+    margin: 0;
+  }
+
+  .intro-left p {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  .sugar-level {
+    font-size: 0.95rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .intro-right img {
+    width: 180px;
+    margin: 20px 0 0 0;
+  }
+
+  .intro h2 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 0 0 30px 0;
+  }
+
+  .btn-start {
+    font-size: 1rem;
+  }
+
+  .btn-wrapper {
+    margin-top: 20px;
+  }
+}
+
+/* 질문 */
+>>>>>>> Stashed changes
 .question-preview {
   padding: 40px 20px;
   text-align: center;
@@ -87,6 +420,7 @@ footer {
 }
 
 .question-image {
+<<<<<<< Updated upstream
   height: 120px;
   background-color: #ccc;
   margin-bottom: 12px;
@@ -95,6 +429,281 @@ footer {
 .options .option {
   background-color: #eee;
   margin: 6px auto;
+=======
+  height: 400px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.question-image img {
+  height: 400px;
+  object-fit: contain;
+  margin-bottom: 24px;
+  margin-top: 10px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.option {
+  background-color: #fff;
+  border: 2px solid #fcedb3;
+  margin: 0 auto;
+  padding: 12px;
+  border-radius: 999px;
+  width: 100%;
+  max-width: 450px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s;
+}
+
+.option:hover {
+  background-color: #f7df97;
+  cursor: pointer;
+}
+
+/* 태블릿 1200 이하 */
+@media screen and (max-width: 1200px) {
+  .card {
+    max-width: 600px;
+  }
+  .question {
+    font-size: 1.3rem;
+  }
+  .question-title {
+    font-size: 1.2rem;
+  }
+  .question-image {
+    height: 400px;
+  }
+  .option {
+    font-size: 1.2rem;
+  }
+  .question-image img {
+    height: 400px;
+    object-fit: contain;
+    margin-bottom: 24px;
+    margin-top: 10px;
+  }
+}
+
+/* 모바일 768 이하*/
+@media screen and (max-width: 768px) {
+  .question-preview {
+    padding: 60px 20px;
+    background-image: none !important;
+    background-color: #fae2af;
+  }
+
+  .card {
+    padding: 20px;
+    max-width: 360px;
+    background-color: #fae2af !important;
+    box-shadow: none;
+  }
+
+  .question {
+    font-size: 1rem;
+    padding: 11px 18px;
+    max-width: 280px;
+    margin-bottom: 16px;
+  }
+
+  .question-title {
+    font-size: 16px;
+    margin: 12px 0;
+  }
+
+  .question-image {
+    height: 240px;
+    margin-bottom: 20px;
+  }
+
+  .option {
+    font-size: 1rem;
+    padding: 11px;
+    max-width: 280px;
+  }
+
+  .options {
+    gap: 12px;
+  }
+  .question-image img {
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 24px;
+    margin-top: 10px;
+  }
+  .card {
+    width: 100%;
+    max-width: 80%;
+  }
+}
+
+/* 전통주 소개 */
+.introduce {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.introduce h2 {
+  margin-bottom: 40px;
+  font-size: 30px;
+  text-align: left;
+}
+
+.slider-container {
+  overflow: hidden;
+  max-width: 850px;
+  margin: 0 auto;
+  position: relative;
+  width: fit-content;
+}
+
+.slider-track {
+  display: flex;
+  align-items: flex-end;
+  will-change: transform;
+  gap: 120px;
+  margin-left: 30px;
+}
+.slider-track a {
+  color: black;
+  text-decoration: none;
+}
+.item {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.item img {
+  width: 170px;
+  height: 170px;
+  border-radius: 16px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.item p {
+  margin: 0 auto;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.item.center img {
+  width: 210px;
+  height: 210px;
+}
+
+.item.center p {
+  font-size: 1.3rem !important;
+  font-weight: 600;
+  color: #111;
+  margin-top: 4px;
+}
+
+/* 태블릿 1200 이하 */
+@media screen and (max-width: 1200px) {
+  .introduce h2 {
+    margin-left: 100px;
+  }
+
+  .slider-container {
+    max-width: 690px;
+  }
+
+  .slider-track {
+    gap: 50px;
+    margin: 0;
+  }
+
+  .item {
+    flex: 0 0 200px;
+  }
+
+  .item img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .item.center img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .item p {
+    font-size: 1rem;
+  }
+
+  .center-label {
+    font-size: 1.15rem !important;
+  }
+
+  .products {
+    gap: 24px;
+  }
+}
+
+/* 모바일 768 이하*/
+@media screen and (max-width: 768px) {
+  #wrap {
+    background-size: 1100px auto;
+  }
+  .introduce h2 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 0 0 30px 0;
+  }
+
+  .slider-container {
+    max-width: 450px;
+  }
+
+  .slider-track {
+    gap: 10px;
+    margin: 0;
+  }
+
+  .item {
+    flex: 0 0 140px;
+  }
+
+  .item img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .item.center img {
+    width: 120px;
+    height: 120px;
+  }
+  .item p {
+    font-size: 0.9rem;
+  }
+
+  .center-label {
+    font-size: 1.05rem !important;
+  }
+}
+
+/* 푸터 -pc */
+footer {
+  background-color: #f4dfb5;
+>>>>>>> Stashed changes
   padding: 10px;
   border-radius: 6px;
   width: 80%;
