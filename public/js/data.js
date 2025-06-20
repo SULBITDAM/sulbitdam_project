@@ -9,7 +9,7 @@ const liquorData = {
     alcohol: "5.5%",
     volume: "750ml",
     homepage: "http://www.daegutakju.co.kr/main/",
-    img: "../public/img/char3.png",
+    img: "../public/img/char1.png",
     introImage: "../public/img/result_img/A/intro.jpg",
     introParagraphs: [
       "대구 불로막걸리",
@@ -57,7 +57,7 @@ const liquorData = {
     alcohol: "13%",
     volume: "700ml",
     homepage: "https://www.kumbokju.co.kr/",
-    img: "../public/img/char1.png",
+    img: "../public/img/char3.png",
     introImage: "../public/img/result_img/B/intro.jpg",
     introParagraphs: [
       "경주 법주",
@@ -103,7 +103,7 @@ const liquorData = {
     alcohol: "12%",
     volume: "750ml",
     homepage: "https://www.gamwine.com/company/main.php",
-    img: "../public/img/char6.png",
+    img: "../public/img/char5.png",
     introImage: "../public/img/result_img/C/intro.png",
     introParagraphs: [
       "청도 감 와인",
@@ -151,7 +151,7 @@ const liquorData = {
     alcohol: "45%",
     volume: "400ml",
     homepage: "https://www.andongsoju.com/",
-    img: "../public/img/char5.png",
+    img: "../public/img/char4.png",
     introImage: "../public/img/result_img/D/intro.jpg",
     introParagraphs: [
       "안동 소주",
@@ -198,7 +198,7 @@ const liquorData = {
     alcohol: "15%",
     volume: "500ml",
     homepage: "https://hwayang.co/",
-    img: "../public/img/char4.png",
+    img: "../public/img/char6.png",
     introImage: "../public/img/result_img/E/intro.jpg",
     introParagraphs: [
       "문경 풍정사계 춘",

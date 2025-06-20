@@ -1,11 +1,7 @@
 body {
   margin: 0;
   font-family: "Pretendard", sans-serif;
-<<<<<<< Updated upstream
-  background-color: #f8f5ef;
-=======
   background-color: #fbf0da;
->>>>>>> Stashed changes
   color: #333;
 }
 #wrap {
@@ -18,9 +14,6 @@ header,
 footer {
   text-align: center;
   padding: 16px;
-<<<<<<< Updated upstream
-  background-color: #f5f5f5;
-=======
 }
 
 .container {
@@ -76,7 +69,6 @@ footer {
   width: 600%; /* 6장 * 100% */
   height: 100%;
   transition: transform 1s ease;
->>>>>>> Stashed changes
 }
 
 .slide {
@@ -111,15 +103,6 @@ footer {
   z-index: 5;
 }
 .logo {
-<<<<<<< Updated upstream
-  font-weight: bold;
-}
-
-.hero {
-  text-align: center;
-  background-color: #f7e1b5;
-  padding: 40px 20px;
-=======
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -134,23 +117,17 @@ h1 {
   font-size: 2.5rem;
   margin: 30px 0 0 0;
   font-weight: 700;
->>>>>>> Stashed changes
 }
 
-.characters img {
-  width: 100px;
-  margin: 0 8px;
+.char {
+  width: 130px;
 }
 
 .scroll-down {
-  font-size: 24px;
-  margin-top: 12px;
+  font-size: 2.5rem;
   animation: bounce 1.5s infinite;
-<<<<<<< Updated upstream
-=======
   margin-top: 160px;
   color: white;
->>>>>>> Stashed changes
 }
 
 @keyframes bounce {
@@ -163,8 +140,6 @@ h1 {
   }
 }
 
-<<<<<<< Updated upstream
-=======
 .characters-mobile,
 .mobile-header {
   display: none;
@@ -260,17 +235,11 @@ h1 {
   z-index: 0;
 }
 
->>>>>>> Stashed changes
 .intro {
+  padding: 60px 20px;
   text-align: center;
-  padding: 40px 20px;
 }
 
-<<<<<<< Updated upstream
-.preview-img img {
-  width: 150px;
-  margin: 20px 0;
-=======
 .intro h2 {
   font-size: 30px;
   text-align: left;
@@ -318,25 +287,25 @@ h1 {
 .btn-wrapper {
   text-align: center;
   margin-top: 40px;
->>>>>>> Stashed changes
 }
 
 .btn-start {
-  background-color: #555;
-  color: white;
+  background-color: #ffffff;
+  color: #333;
   border: none;
-  padding: 14px 30px;
-  border-radius: 8px;
-  font-size: 16px;
+  padding: 14px 50px;
+  border-radius: 999px;
+  font-size: 1.5rem;
+  font-weight: bold;
   cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
 }
 
 .btn-start:hover {
-  background-color: #333;
+  background-color: #fad792;
 }
 
-<<<<<<< Updated upstream
-=======
 /* 모바일 768 이하*/
 @media screen and (max-width: 768px) {
   .intro,
@@ -399,37 +368,42 @@ h1 {
 }
 
 /* 질문 */
->>>>>>> Stashed changes
 .question-preview {
-  padding: 40px 20px;
+  padding: 80px 20px;
   text-align: center;
 }
 
 .card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 20px;
+  padding: 30px;
   display: inline-block;
-  width: 300px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 700px;
+  border-radius: 24px;
+  border: 3px solid rgb(88, 70, 50);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.question {
+  background-color: #fff;
+  border: 2px solid #fcedb3;
+  border-radius: 999px;
+  padding: 14px 20px;
+  max-width: 520px;
+  margin: 0 auto 20px;
+  font-weight: bold;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  font-size: 1.5rem;
 }
 
 .question-title {
   font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 1.3rem;
+  margin: 16px 0;
+  color: #333;
 }
 
 .question-image {
-<<<<<<< Updated upstream
-  height: 120px;
-  background-color: #ccc;
-  margin-bottom: 12px;
-}
-
-.options .option {
-  background-color: #eee;
-  margin: 6px auto;
-=======
   height: 400px;
   margin-bottom: 24px;
   overflow: hidden;
@@ -557,8 +531,9 @@ h1 {
 
 .introduce h2 {
   margin-bottom: 40px;
-  font-size: 30px;
+  font-size: 2.5rem;
   text-align: left;
+  margin-left: 180px;
 }
 
 .slider-container {
@@ -575,11 +550,9 @@ h1 {
   will-change: transform;
   gap: 120px;
   margin-left: 30px;
+  height: 300px;
 }
-.slider-track a {
-  color: black;
-  text-decoration: none;
-}
+
 .item {
   flex: 0 0 auto;
   display: flex;
@@ -595,6 +568,7 @@ h1 {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
   object-fit: cover;
   margin-bottom: 12px;
+  transition: all 0.4s ease;
 }
 
 .item p {
@@ -605,8 +579,7 @@ h1 {
 }
 
 .item.center img {
-  width: 210px;
-  height: 210px;
+  transform: scale(1.2);
 }
 
 .item.center p {
@@ -703,27 +676,99 @@ h1 {
 /* 푸터 -pc */
 footer {
   background-color: #f4dfb5;
->>>>>>> Stashed changes
   padding: 10px;
-  border-radius: 6px;
-  width: 80%;
-}
-
-.introduce {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.products {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  box-sizing: border-box;
 }
 
-.products .item {
-  width: 80px;
-  height: 80px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: nowrap;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 auto;
+  min-width: 250px;
+}
+
+.logo {
+  height: 85px;
+  flex-shrink: 0;
+}
+
+.copyright {
+  font-size: 0.75rem;
+  text-align: left;
+  font-weight: 500;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  align-self: flex-start;
+  margin-top: 13px;
+}
+
+.social-icons img {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 4px;
+  object-fit: contain;
+}
+
+/* 태블릿 1200 이하 */
+@media screen and (max-width: 1200px) {
+  .logo {
+    height: 70px;
+  }
+
+  .copyright {
+    font-size: 0.7rem;
+  }
+
+  .social-icons img {
+    width: 16px;
+    height: 16px;
+    padding: 3px;
+  }
+
+  .footer-container {
+    padding: 0;
+  }
+}
+
+/* 모바일 768 이하*/
+@media screen and (max-width: 768px) {
+  .logo {
+    height: 70px;
+  }
+
+  .copyright {
+    font-size: 0.7rem;
+  }
+
+  .social-icons img {
+    width: 16px;
+    height: 16px;
+    padding: 3px;
+  }
+
+  .footer-container {
+    gap: 8px;
+  }
 }

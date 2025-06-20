@@ -31,20 +31,11 @@ window.addEventListener("click", function (e) {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-<<<<<<< Updated upstream
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get("id") || "resultA"; // 기본값은 resultA
-
-  document.querySelectorAll(".tabs a").forEach((a) => {
-    const hrefId = new URL(a.href).searchParams.get("id");
-    if (hrefId === id) {
-=======
   let id = window.location.pathname.split("/").pop() || "resultA";
 
   document.querySelectorAll(".tabs a, #mobileMenu a").forEach((a) => {
     const href = a.getAttribute("href");
     if (href === id) {
->>>>>>> Stashed changes
       a.classList.add("active");
     } else {
       a.classList.remove("active");
