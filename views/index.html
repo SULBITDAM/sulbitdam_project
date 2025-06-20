@@ -5,152 +5,205 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>경북의 전통주 소믈리에 테스트</title>
     <link rel="stylesheet" href="/public/css/style.css" />
+    <link rel="stylesheet" href="/public/css/base.css" />
   </head>
   <body>
     <section class="hero">
       <div class="container">
-        <div class="row row-top">
-          <img src="/public/img/char1.png" alt="캐릭터1" class="char char1" />
-          <div class="logo">
-            <img src="/public/img/logo.png" alt="로고" />
+        <!-- 고정된 로고와 문구 -->
+        <div class="fixed-content">
+          <div class="main_logo">
+            <img src="/public/img/logo_white.png" alt="로고" />
           </div>
-          <img src="/public/img/char2.png" alt="캐릭터2" class="char char2" />
-        </div>
-
-        <div class="row row-middle">
-          <img src="/public/img/char3.png" alt="캐릭터3" class="char char3" />
           <h1>경북의 전통주를 맛보다!</h1>
-          <img src="/public/img/char4.png" alt="캐릭터4" class="char char4" />
+          <div class="scroll-down">⌄</div>
         </div>
 
-        <div class="row row-bottom">
-          <img src="/public/img/char5.png" alt="캐릭터5" class="char char5" />
-          <div class="spacer"></div>
-          <img src="/public/img/char6.png" alt="캐릭터6" class="char char6" />
-        </div>
-
-        <div class="mobile-header">
-          <div class="mobile-logo">
-            <img src="/public/img/logo.png" alt="로고" />
+        <!-- 슬라이드 영역 -->
+        <div class="slider">
+          <div class="slides">
+            <div class="slide">
+              <div class="bg-wrapper">
+                <img src="/public/img/mainA.jpg" class="bg" alt="불로막걸리" />
+                <div class="overlay"></div>
+              </div>
+              <img src="/public/img/char1.png" class="char" alt="불로막걸리" />
+            </div>
+            <div class="slide">
+              <div class="bg-wrapper">
+                <img src="/public/img/mainB.jpg" class="bg" alt="경주법주" />
+                <div class="overlay"></div>
+              </div>
+              <img src="/public/img/char3.png" class="char" alt="경주법주" />
+            </div>
+            <div class="slide">
+              <div class="bg-wrapper">
+                <img src="/public/img/mainC.jpg" class="bg" alt="청도감와인" />
+                <div class="overlay"></div>
+              </div>
+              <img src="/public/img/char5.png" class="char" alt="청도감와인" />
+            </div>
+            <div class="slide">
+              <div class="bg-wrapper">
+                <img src="/public/img/mainD.jpg" class="bg" alt="안동소주" />
+                <div class="overlay"></div>
+              </div>
+              <img src="/public/img/char4.png" class="char" alt="안동소주" />
+            </div>
+            <div class="slide">
+              <div class="bg-wrapper">
+                <img src="/public/img/mainE.png" class="bg" alt="풍정사계춘" />
+                <div class="overlay"></div>
+              </div>
+              <img src="/public/img/char6.png" class="char" alt="풍정사게춘" />
+            </div>
+            <div class="slide">
+              <div class="bg-wrapper">
+                <img src="/public/img/mainF.png" class="bg" alt="경주별맥" />
+                <div class="overlay"></div>
+              </div>
+              <img src="/public/img/char2.png" class="char" alt="경주별맥" />
+            </div>
           </div>
-          <h1 class="mobile-title">경북의 전통주를 맛보다!</h1>
         </div>
-        <div class="characters-mobile">
-          <img src="/public/img/char1.png" alt="캐릭터1" />
-          <img src="/public/img/char2.png" alt="캐릭터2" />
-          <img src="/public/img/char3.png" alt="캐릭터3" />
-          <img src="/public/img/char4.png" alt="캐릭터4" />
-          <img src="/public/img/char5.png" alt="캐릭터5" />
-          <img src="/public/img/char6.png" alt="캐릭터6" />
-        </div>
-
-        <div class="scroll-down">⌄</div>
       </div>
     </section>
 
-    <section class="intro">
-      <div class="container">
-        <h2>소믈리에 테스트</h2>
+    <div id="wrap">
+      <section class="intro">
+        <div class="container">
+          <h2>소믈리에 테스트</h2>
 
-        <div class="intro-body">
-          <div class="intro-right">
-            <img src="/public/img/preview.png" alt="미리보기" />
-          </div>
+          <div class="intro-body">
+            <div class="intro-right">
+              <img src="/public/img/preview.png" alt="미리보기" />
+            </div>
 
-          <div class="intro-left">
-            <p class="intro-text">
-              전통 방식으로 빚은<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;다양한 전통주를 알아보고,<br /><br />
-              나에게 어울리는 술은 무엇인지<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 간단한 테스트도 해보세요.<br /><br />
-              테스트 후 알림톡으로<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;결과를 받아보실 수 있어요.
-            </p>
-            <!-- <p>
+            <div class="intro-left">
+              <p class="intro-text">
+                전통 방식으로 빚은<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;다양한 전통주를 알아보고,<br /><br />
+                나에게 어울리는 술은 무엇인지<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 간단한 테스트도
+                해보세요.<br /><br />
+                테스트 후 알림톡으로<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;결과를 받아보실 수 있어요.
+              </p>
+              <!-- <p>
               전통방식으로 빚은 다양한<br />
               전통주를 알아보고<br />
               나에게 맞는 술도 찾아보자!
             </p> -->
-            <!-- <div class="sugar-level">Q. 원하는 당도는?</div> -->
+              <!-- <div class="sugar-level">Q. 원하는 당도는?</div> -->
+            </div>
           </div>
+
+          <div class="btn-wrapper"></div>
         </div>
+      </section>
 
-        <div class="btn-wrapper"></div>
-      </div>
-    </section>
-
-    <section class="question-preview">
-      <div class="card">
-        <div class="container">
-          <button onclick="location.href='/survey'" class="btn-start">
-            테스트 시작하기
-          </button>
-          <p class="starts">나에게 맞는 전통주에 대한 테스트~</p>
-          <div class="question-image">
-            <img src="/public/img/question.png" alt="질문" />
-          </div>
-          <!-- <div class="question">Q. 당신이 선호하는 술의 도수는?</div>
+      <section class="question-preview">
+        <div class="card">
+          <div class="container">
+            <button onclick="location.href='/survey'" class="btn-start">
+              테스트 시작하기
+            </button>
+            <p class="starts">나에게 맞는 전통주에 대한 테스트~</p>
+            <div class="question-image">
+              <img src="/public/img/question.png" alt="질문" />
+            </div>
+            <!-- <div class="question">Q. 당신이 선호하는 술의 도수는?</div>
         <div class="question-title">술 도수 취향</div>
       
         <div class="options">
           <div class="option">1. 도수가 낮고 마시기 편한 술</div>
           <div class="option">2. 도수가 높고 진한 풍미의 술</div>
         </div> -->
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="introduce">
-      <div class="container">
-        <h2>경북 전통주 소개</h2>
-        <div class="slider-container">
-          <div class="slider-track">
-            <div class="item">
-              <img src="/public/img/drink2.png" alt="별맥" />
-              <p>경주 별맥</p>
-            </div>
-            <div class="item center">
-              <img src="/public/img/drink3.png" alt="불로막걸리" />
-              <p>대구 불로막걸리</p>
-            </div>
-            <div class="item">
-              <img src="/public/img/drink1.png" alt="법주" />
-              <p>경주 법주</p>
-            </div>
-            <div class="item">
-              <img src="/public/img/drink4.png" alt="감와인" />
-              <p>청도 감와인</p>
-            </div>
-            <div class="item">
-              <img src="/public/img/drink5.png" alt="소주" />
-              <p>안동 소주</p>
-            </div>
-            <div class="item">
-              <img src="/public/img/drink6.png" alt="풍정사계춘" />
-              <p>문경 풍정사계춘</p>
+      <section class="introduce">
+        <div class="container">
+          <h2>경북 전통주 소개</h2>
+          <div class="slider-container">
+            <div class="slider-track">
+              <div class="item">
+                <a href="result/resultF">
+                  <img src="/public/img/drink2.png" alt="별맥" />
+                  <p>경주 별맥</p>
+                </a>
+              </div>
+              <div class="item center">
+                <a href="result/resultA">
+                  <img src="/public/img/drink3.png" alt="불로막걸리" />
+                  <p>대구 불로막걸리</p>
+                </a>
+              </div>
+              <div class="item">
+                <a href="result/resultB">
+                  <img src="/public/img/drink1.png" alt="법주" />
+                  <p>경주 법주</p>
+                </a>
+              </div>
+              <div class="item">
+                <a href="result/resultC">
+                  <img src="/public/img/drink4.png" alt="감와인" />
+                  <p>청도 감와인</p>
+                </a>
+              </div>
+              <div class="item">
+                <a href="result/resultD">
+                  <img src="/public/img/drink5.png" alt="소주" />
+                  <p>안동 소주</p>
+                </a>
+              </div>
+              <div class="item">
+                <a href="result/resultE">
+                  <img src="/public/img/drink6.png" alt="풍정사계춘" />
+                  <p>문경 풍정사계춘</p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <footer>
-      <div class="footer-container">
-        <div class="footer-left">
-          <img src="/public/img/logo.png" alt="로고" class="logo" />
-          <div class="copyright">
-            술빛담<br />
-            대구광역시 동구 화랑로 525<br />
-            Copyright ⓒ 2025 by SULBITDAM. All right reserved
+      <footer>
+        <div class="footer-container">
+          <div class="footer-left">
+            <img src="/public/img/logo.png" alt="로고" class="logo" />
+            <div class="copyright">
+              술빛담<br />
+              대구광역시 동구 화랑로 525<br />
+              Copyright ⓒ 2025 by SULBITDAM. All right reserved
+            </div>
+          </div>
+          <div class="social-icons">
+            <a href=""
+              ><img src="/public/img/icon_youtube.png" alt="유튜브"
+            /></a>
+            <a href=""
+              ><img src="/public/img/icon_github.png" alt="깃허브"
+            /></a>
           </div>
         </div>
-        <div class="social-icons">
-          <a href=""><img src="/public/img/icon_youtube.png" alt="유튜브" /></a>
-          <a href=""><img src="/public/img/icon_github.png" alt="깃허브" /></a>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
+    <script>
+      const slides = document.querySelector(".slides");
+      const totalSlides = document.querySelectorAll(".slide").length;
+      let current = 0;
 
+      function nextSlide() {
+        current = (current + 1) % totalSlides;
+        slides.style.transform = `translateX(-${
+          (current * 100) / totalSlides
+        }%)`;
+      }
+
+      setInterval(nextSlide, 5000);
+    </script>
     <!-- 전통주 슬라이더 -->
     <script>
       const track = document.querySelector(".slider-track");

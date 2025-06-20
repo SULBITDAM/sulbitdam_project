@@ -31,26 +31,11 @@ window.addEventListener("click", function (e) {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  const pathId = window.location.pathname.split("/").pop(); // resultD 같은 값
-  const id = pathId || "resultA";
+  let id = window.location.pathname.split("/").pop() || "resultA";
 
-  // URL의 pathname에서 id=resultX 추출
-  const pathLast = window.location.pathname.split("/").pop();
-  const match = pathLast.match(/id=(result\w+)/);
-  if (match) {
-    id = match[1];
-  }
-
-  // 기본값
-  if (!id) id = "resultA";
-
-  // 탭 active 처리
-  document.querySelectorAll(".tabs a").forEach((a) => {
-    const href = a.getAttribute("href"); // 예: "id=resultB"
-    const match = href.match(/id=(result\w+)/);
-    const hrefId = match ? match[1] : null;
-
-    if (hrefId === id) {
+  document.querySelectorAll(".tabs a, #mobileMenu a").forEach((a) => {
+    const href = a.getAttribute("href");
+    if (href === id) {
       a.classList.add("active");
     } else {
       a.classList.remove("active");
@@ -58,7 +43,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   const data = liquorData[id];
-
   if (!data) {
     alert("해당 술 정보를 찾을 수 없습니다.");
     return;
@@ -74,10 +58,10 @@ window.addEventListener("DOMContentLoaded", () => {
   // Info
   document.querySelector(".char").src = data.img;
   document.querySelector(".details").innerHTML = `
-    <p><strong>종류:</strong> ${data.type}</p>
-    <p><strong>원재료:</strong> ${data.ingredients}</p>
-    <p><strong>알콜도수:</strong> ${data.alcohol}</p>
-    <p><strong>용량:</strong> ${data.volume}</p>
+    <p><strong>종류</strong> ${data.type}</p>
+    <p><strong>원재료</strong> ${data.ingredients}</p>
+    <p><strong>알콜도수</strong> ${data.alcohol}</p>
+    <p><strong>용량</strong> ${data.volume}</p>
     <p><a href="${data.homepage}" target="_blank">공식 홈페이지</a></p>
   `;
 
