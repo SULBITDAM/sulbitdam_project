@@ -1,3 +1,8 @@
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   font-family: "Pretendard", sans-serif;
@@ -315,7 +320,8 @@ h1 {
   .intro,
   .question-preview,
   .introduce {
-    background-image: none;
+    /* background-image: none; */
+    background-size: 100% auto;
   }
 
   .intro::before,
@@ -561,6 +567,7 @@ h1 {
   will-change: transform;
   gap: 120px;
   margin-left: 30px;
+  height: 300px;
 }
 
 .item {
@@ -589,8 +596,7 @@ h1 {
 }
 
 .item.center img {
-  width: 210px;
-  height: 210px;
+  transform: scale(1.2);
 }
 
 .item.center p {
@@ -613,6 +619,7 @@ h1 {
   .slider-track {
     gap: 50px;
     margin: 0;
+    height: 200px;
   }
 
   .item {
@@ -625,8 +632,7 @@ h1 {
   }
 
   .item.center img {
-    width: 180px;
-    height: 180px;
+    transform: scale(1.2);
   }
 
   .item p {
@@ -646,7 +652,6 @@ h1 {
 @media screen and (max-width: 768px) {
   .introduce {
     background-color: #fbf0da;
-    width: 100%;
   }
 
   .introduce h2 {
@@ -660,12 +665,11 @@ h1 {
   }
 
   .slider-track {
-    gap: 10px;
-    margin: 0;
+    gap: 15px;
   }
 
   .item {
-    flex: 0 0 90px;
+    flex: 0 0 calc((100% - 30px) / 3);
   }
 
   .item img {
@@ -674,8 +678,7 @@ h1 {
   }
 
   .item.center img {
-    width: 110px;
-    height: 110px;
+    transform: scale(1.2);
   }
   .item p {
     font-size: 0.85rem;
