@@ -359,7 +359,7 @@ footer {
 }
 
 /* 태블릿 */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
   header {
     height: 300px;
   }

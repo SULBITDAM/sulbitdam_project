@@ -149,79 +149,70 @@ h1 {
   display: none;
 }
 
-/* 태블릿 1200 이하 */
-@media screen and (max-width: 1200px) {
-  .char {
-    width: 80px;
+/* 태블릿 1024 이하 */
+@media screen and (max-width: 1024px) {
+  /* 전통주 - pc*/
+  .hero {
+    height: 500px;
+  }
+  .fixed-content {
+    margin-top: 20px;
   }
 
-  .logo img {
-    width: 120px;
+  .fixed-content .main_logo img {
+    width: 180px;
   }
 
-  .brand {
-    font-size: 1rem;
+  .fixed-content h1 {
+    margin-top: 15px;
+    font-size: 30px;
+    font-weight: bold;
   }
 
-  h1 {
-    font-size: 1.8rem;
+  .fixed-content p {
+    font-size: 20px;
+  }
+
+  .slide .char {
+    width: 150px;
   }
 }
 
 /* 모바일 768 이하*/
 @media screen and (max-width: 768px) {
-  .row-top,
-  .row-middle,
-  .row-bottom {
-    display: none;
+  /* 전통주 - pc*/
+  .hero {
+    height: 400px;
+  }
+  .fixed-content {
+    margin-top: 30px;
   }
 
-  .mobile-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-  }
-
-  .mobile-logo img {
+  .fixed-content .main_logo img {
     width: 130px;
   }
 
-  .mobile-title {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin: 0 0 30px 0;
+  .fixed-content h1 {
+    margin-top: 15px;
+    font-size: 20px;
   }
 
-  .characters-mobile {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    justify-items: center;
-    margin: 20px 0;
+  .fixed-content p {
+    font-size: 14px;
   }
 
-  .characters-mobile img {
-    width: 80px;
-    height: auto;
-    margin-bottom: 20px;
+  .slide .char {
+    width: 100px;
+    bottom: 40px;
+    right: 10px;
   }
-
-  .characters-mobile {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    justify-items: center;
-  }
-
   .scroll-down {
-    margin-top: 12px;
+    font-size: 2rem;
+    margin-top: 80px;
   }
 }
 
 /* 테스트 -pc */
-
 .intro,
 .introduce {
   position: relative;
@@ -285,6 +276,7 @@ h1 {
 .intro-talk p {
   font-size: 20px;
   text-align: center;
+  margin-bottom: 50px;
 }
 .intro-talk-in {
   display: flex;
@@ -293,15 +285,127 @@ h1 {
   justify-content: center;
   font-weight: bold;
 }
+.talk-name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  color: #d08c4f;
+  margin-bottom: 4px;
+  font-family: "Pretendard", sans-serif;
+}
+
 .intro-right img {
   width: 350px;
   margin: 0;
 }
-
 .btn-wrapper {
   text-align: center;
   margin-top: 40px;
 }
+
+/* 태블릿 1024 이하 */
+@media screen and (max-width: 1024px) {
+  /* 테스트 -pc */
+  .intro {
+    padding: 40px 20px;
+    padding-bottom: 0px;
+  }
+
+  .intro h2 {
+    font-size: 28px;
+  }
+
+  .intro-body {
+    padding: 0px 50px;
+  }
+
+  .intro-left {
+    font-size: 18px;
+  }
+
+  .sugar-level {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  .intro-talk {
+    margin-top: 0px;
+  }
+  .intro-talk p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  .intro-talk-in {
+    gap: 50px;
+  }
+  .intro-right img {
+    width: 300px;
+  }
+}
+
+/* 모바일 768 이하*/
+@media screen and (max-width: 768px) {
+  /* 테스트 -pc */
+  .intro {
+    padding: 30px 20px;
+    padding-bottom: 0px;
+  }
+
+  .intro h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .intro-body {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0px 10px;
+  }
+
+  .intro-left {
+    text-align: left;
+    line-height: 1.5;
+    font-size: 16px;
+    color: #333;
+    white-space: normal;
+  }
+
+  .intro-left p {
+    margin: 10px 0px;
+  }
+
+  .sugar-level {
+    font-weight: bold;
+    font-size: 16px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 60px;
+    border: 1px solid #f4dfb5;
+  }
+  .intro-talk {
+    margin-top: 20px;
+  }
+  .intro-talk p {
+    font-size: 16px;
+    text-align: center;
+    padding: 0px 100px;
+  }
+  .intro-talk-in {
+    font-size: 8px;
+    gap: 10px;
+  }
+  .intro-right img {
+    width: 200px;
+    margin: 0;
+  }
+  .btn-wrapper {
+    margin-top: 20px;
+  }
+  .talk-name {
+    font-size: 14px;
+  }
+}
+
+/* 질문 */
 
 .btn-start {
   background-color: #ffffff;
@@ -319,69 +423,6 @@ h1 {
 .btn-start:hover {
   background-color: #fad792;
 }
-
-/* 모바일 768 이하*/
-@media screen and (max-width: 768px) {
-  .intro,
-  .question-preview,
-  .introduce {
-    background-image: none;
-  }
-
-  .intro::before,
-  .question-preview::before,
-  .introduce::before {
-    display: none;
-  }
-
-  .intro-body {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .intro-right {
-    width: 180px;
-    line-height: 0;
-  }
-
-  .intro-right img {
-    width: 180px;
-    margin: 0;
-  }
-
-  .intro-left p {
-    font-size: 1.1rem;
-    margin: 0;
-  }
-
-  .sugar-level {
-    font-size: 0.95rem;
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
-
-  .intro-right img {
-    width: 180px;
-    margin: 20px 0 0 0;
-  }
-
-  .intro h2 {
-    font-size: 1.6rem;
-    text-align: center;
-    margin: 0 0 30px 0;
-  }
-
-  .btn-start {
-    font-size: 1rem;
-  }
-
-  .btn-wrapper {
-    margin-top: 20px;
-  }
-}
-
-/* 질문 */
 .question-preview {
   text-align: center;
   display: flex;
@@ -476,81 +517,64 @@ h1 {
   cursor: pointer;
 }
 
-/* 태블릿 1200 이하 */
-@media screen and (max-width: 1200px) {
+/* 태블릿 1024 이하 */
+@media screen and (max-width: 1024px) {
+  /* 질문 */
+  .btn-start {
+    font-size: 20px;
+  }
+  .question-in {
+    padding: 60px 0px;
+  }
   .card {
-    max-width: 600px;
+    padding: 20px;
+    width: 70%;
   }
-  .question {
-    font-size: 1.3rem;
-  }
-  .question-title {
-    font-size: 1.2rem;
+  .starts {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 40px;
   }
   .question-image {
-    height: 400px;
+    height: 300px;
   }
-  .option {
-    font-size: 1.2rem;
-  }
+
   .question-image img {
-    height: 400px;
-    object-fit: contain;
-    margin-bottom: 24px;
-    margin-top: 10px;
+    height: 300px;
   }
 }
 
 /* 모바일 768 이하*/
 @media screen and (max-width: 768px) {
-  .question-preview {
-    padding: 60px 20px;
-    background-image: none !important;
-    background-color: #fae2af;
-  }
-
-  .card {
-    padding: 20px;
-    max-width: 360px;
-    background-color: #fae2af !important;
-    box-shadow: none;
-  }
-
-  .question {
-    font-size: 1rem;
-    padding: 11px 18px;
-    max-width: 280px;
-    margin-bottom: 16px;
-  }
-
-  .question-title {
+  /* 질문 */
+  .btn-start {
+    padding: 14px 40px;
     font-size: 16px;
-    margin: 12px 0;
   }
-
+  .question-preview {
+    margin: 50px 0px;
+  }
+  .question-in {
+    padding: 50px 0px;
+  }
+  .card {
+    width: 70%;
+  }
+  .starts {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 30px;
+  }
+  .starts-2 {
+    font-size: 12px;
+  }
   .question-image {
-    height: 240px;
-    margin-bottom: 20px;
+    height: 200px;
+    margin-bottom: 0px;
   }
 
-  .option {
-    font-size: 1rem;
-    padding: 11px;
-    max-width: 280px;
-  }
-
-  .options {
-    gap: 12px;
-  }
   .question-image img {
     height: 200px;
-    object-fit: contain;
-    margin-bottom: 24px;
-    margin-top: 10px;
-  }
-  .card {
-    width: 100%;
-    max-width: 80%;
   }
 }
 
@@ -632,45 +656,27 @@ h1 {
   color: #111;
   margin-top: 10px;
 }
-/* 태블릿 1200 이하 */
-@media screen and (max-width: 1200px) {
-  .introduce h2 {
-    margin-left: 100px;
-  }
 
+/* 태블릿 1024 이하 */
+@media screen and (max-width: 1024px) {
+  /* 전통주 소개 */
+  .introduce {
+    padding: 60px 20px;
+    padding-top: 20px;
+  }
+  .introduce h2 {
+    font-size: 28px;
+  }
   .slider-container {
-    max-width: 690px;
+    max-width: 700px;
   }
 
   .slider-track {
-    gap: 50px;
-    margin: 0;
+    gap: 100px;
   }
-
-  .item {
-    flex: 0 0 200px;
-  }
-
   .item img {
-    width: 140px;
-    height: 140px;
-  }
-
-  .item.center img {
-    width: 180px;
-    height: 180px;
-  }
-
-  .item p {
-    font-size: 1rem;
-  }
-
-  .center-label {
-    font-size: 1.15rem !important;
-  }
-
-  .products {
-    gap: 24px;
+    width: 150px;
+    height: 150px;
   }
 }
 
@@ -679,40 +685,42 @@ h1 {
   #wrap {
     background-size: 1100px auto;
   }
-  .introduce h2 {
-    font-size: 1.6rem;
-    text-align: center;
-    margin: 0 0 30px 0;
+  /* 전통주 소개 */
+  .introduce {
+    padding: 80px 20px;
+    padding-top: 0px;
   }
 
+  .introduce h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    text-align: center;
+  }
   .slider-container {
-    max-width: 450px;
+    max-width: 300px;
   }
 
   .slider-track {
-    gap: 10px;
+    gap: 15px;
+    height: 180px;
     margin: 0;
   }
 
-  .item {
-    flex: 0 0 140px;
-  }
-
   .item img {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
   }
 
-  .item.center img {
-    width: 120px;
-    height: 120px;
-  }
   .item p {
-    font-size: 0.9rem;
+    margin: 0 auto;
+    font-size: 12px;
   }
 
-  .center-label {
-    font-size: 1.05rem !important;
+  .item.center p:nth-child(2) {
+    font-size: 14px !important;
+  }
+  .item.center p:nth-child(3) {
+    display: none;
   }
 }
 
