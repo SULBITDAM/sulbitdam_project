@@ -16,12 +16,23 @@
             <img src="/public/img/logo_white.png" alt="로고" />
           </div>
           <h1>경북의 전통주를 맛보다!</h1>
+          <p>한 잔에 담긴 경북의 시간, 당신의 취향을 찾아 떠나는 여정</p>
           <div class="scroll-down">⌄</div>
         </div>
 
         <!-- 슬라이드 영역 -->
         <div class="slider">
           <div class="slides">
+            <!-- 클론: 마지막 슬라이드와 같음 -->
+            <div class="slide clone">
+              <div class="bg-wrapper">
+                <img src="/public/img/mainF.png" class="bg" alt="경주별맥" />
+                <div class="overlay"></div>
+              </div>
+              <img src="/public/img/char2.png" class="char" alt="경주별맥" />
+            </div>
+
+            <!-- 실제 슬라이드 -->
             <div class="slide">
               <div class="bg-wrapper">
                 <img src="/public/img/mainA.jpg" class="bg" alt="불로막걸리" />
@@ -55,7 +66,7 @@
                 <img src="/public/img/mainE.png" class="bg" alt="풍정사계춘" />
                 <div class="overlay"></div>
               </div>
-              <img src="/public/img/char6.png" class="char" alt="풍정사게춘" />
+              <img src="/public/img/char6.png" class="char" alt="풍정사계춘" />
             </div>
             <div class="slide">
               <div class="bg-wrapper">
@@ -63,6 +74,15 @@
                 <div class="overlay"></div>
               </div>
               <img src="/public/img/char2.png" class="char" alt="경주별맥" />
+            </div>
+
+            <!-- 클론: 첫 슬라이드와 같음 -->
+            <div class="slide clone">
+              <div class="bg-wrapper">
+                <img src="/public/img/mainA.jpg" class="bg" alt="불로막걸리" />
+                <div class="overlay"></div>
+              </div>
+              <img src="/public/img/char1.png" class="char" alt="불로막걸리" />
             </div>
           </div>
         </div>
@@ -192,18 +212,43 @@
     </div>
     <script>
       const slides = document.querySelector(".slides");
-      const totalSlides = document.querySelectorAll(".slide").length;
-      let current = 0;
+      const slideList = document.querySelectorAll(".slide");
+      const slideCount = slideList.length;
+      let currentIndex = 1;
+      const duration = 1000;
+      let allowShift = true;
+
+      // 초기 위치 설정 (첫 슬라이드가 실제 첫 번째니까 index=1)
+      slides.style.transform = `translateX(-${100 * currentIndex}%)`;
+
+      function moveTo(index, animated = true) {
+        if (animated) {
+          slides.style.transition = `transform ${duration}ms ease`;
+        } else {
+          slides.style.transition = "none";
+        }
+        slides.style.transform = `translateX(-${100 * index}%)`;
+        currentIndex = index;
+      }
 
       function nextSlide() {
-        current = (current + 1) % totalSlides;
-        slides.style.transform = `translateX(-${
-          (current * 100) / totalSlides
-        }%)`;
+        if (!allowShift) return;
+        allowShift = false;
+
+        moveTo(currentIndex + 1);
+
+        setTimeout(() => {
+          // 클론 마지막 → 진짜 첫 번째로 점프
+          if (currentIndex === slideCount - 1) {
+            moveTo(1, false);
+          }
+          allowShift = true;
+        }, duration);
       }
 
       setInterval(nextSlide, 5000);
     </script>
+
     <!-- 전통주 슬라이더 -->
     <script>
       const track = document.querySelector(".slider-track");
