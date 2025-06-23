@@ -774,3 +774,34 @@ footer {
     gap: 8px;
   }
 }
+
+.flower-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.petal {
+  position: absolute;
+  top: -40px; /* 위쪽에서 등장 */
+  width: 30px;
+  height: 30px;
+  background: url("/public/img/petal.png") no-repeat center/contain;
+  opacity: 0.8;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
