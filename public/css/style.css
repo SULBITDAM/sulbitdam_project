@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "Pretendard", sans-serif;
-  background-color: #fbf0da;
+  background-color: white;
   color: #333;
 }
 a {
@@ -245,11 +245,15 @@ h1 {
 .intro-right {
   flex: 1;
 }
-
+.intro-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .intro-left {
   text-align: left;
   line-height: 1.5;
-  font-size: 20px;
+  font-size: 22px;
   color: #333;
   white-space: normal;
 }
@@ -284,6 +288,9 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   font-weight: bold;
+}
+.intro-talk-in img {
+  width: 100px;
 }
 .talk-name {
   text-align: center;
@@ -336,6 +343,9 @@ h1 {
   }
   .intro-talk-in {
     gap: 50px;
+  }
+  .intro-talk-in img {
+    width: 70px;
   }
   .intro-right img {
     width: 300px;
@@ -393,6 +403,9 @@ h1 {
     font-size: 8px;
     gap: 10px;
   }
+  .intro-talk-in img {
+    width: 45px;
+  }
   .intro-right img {
     width: 200px;
     margin: 0;
@@ -413,11 +426,12 @@ h1 {
   border: none;
   padding: 14px 50px;
   border-radius: 999px;
-  font-size: 1.5rem;
+  font-size: 22px;
   font-weight: bold;
   cursor: pointer;
   margin-top: 20px;
   transition: background-color 0.3s;
+  border: 3px solid #d08c4f;
 }
 
 .btn-start:hover {
@@ -550,6 +564,9 @@ h1 {
   .btn-start {
     padding: 14px 40px;
     font-size: 16px;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 20px;
   }
   .question-preview {
     margin: 50px 0px;
@@ -724,13 +741,77 @@ h1 {
   }
 }
 
+/* 마스코트 소개 */
+.mascot {
+  background-image: url(../img/mascot_bg.png);
+  text-align: center;
+  position: relative;
+  padding-top: 30px;
+}
+.mascot-in {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  z-index: 1;
+  position: relative;
+  margin-top: 50px;
+}
+.mascot-in h2 {
+  font-size: 30px;
+  text-align: left;
+  margin-bottom: 0px;
+}
+.mascot-char {
+  display: flex;
+  height: 500px;
+  background-image: url(../img/mascot.gif);
+  background-size: cover;
+  background-position: 50%;
+  margin: 0 auto;
+  margin-left: -100px;
+}
+/* 태블릿 1024 이하 */
+@media screen and (max-width: 1024px) {
+  /* 마스코트 소개 */
+  .mascot-in {
+    padding: 30px 20px;
+  }
+  .mascot-in h2 {
+    font-size: 28px;
+  }
+  .mascot-char {
+    height: 400px;
+  }
+}
+
+/* 모바일 768 이하*/
+@media screen and (max-width: 768px) {
+  /* 마스코트 소개 */
+  .mascot {
+    background-size: 1100px auto;
+    padding-top: 10px;
+  }
+  .mascot-in {
+    margin-top: 20px;
+  }
+  .mascot-in h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+  .mascot-char {
+    height: 200px;
+    margin-left: -30px;
+  }
+}
+
 /* 푸터 -pc */
 footer {
-  background-color: #f4dfb5;
+  background-color: #6b4a3e;
   padding: 10px;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
+  color: white;
 }
 
 .footer-container {

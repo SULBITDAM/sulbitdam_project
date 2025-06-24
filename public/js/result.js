@@ -145,3 +145,34 @@ document.addEventListener("DOMContentLoaded", () => {
   if (contentEl) observer.observe(contentEl);
   if (introTextEl) observer.observe(introTextEl);
 });
+
+const flowerContainer = document.querySelector(".flower-container");
+
+function createPetal() {
+  const petal = document.createElement("div");
+  petal.classList.add("petal");
+
+  // 랜덤 값들
+  const startLeft = Math.random() * window.innerWidth;
+  const size = 20 + Math.random() * 20; // 크기 20~40
+  const duration = 5 + Math.random() * 5; // 지속시간
+  const rotateDeg = 100 + Math.random() * 200;
+
+  // 스타일 지정
+  petal.style.left = `${startLeft}px`;
+  petal.style.width = `${size}px`;
+  petal.style.height = `${size}px`;
+  petal.style.animationDuration = `${duration}s`;
+  petal.style.transform = `rotate(${rotateDeg}deg)`;
+
+  // 생성
+  flowerContainer.appendChild(petal);
+
+  // 일정 시간 뒤 제거
+  setTimeout(() => {
+    petal.remove();
+  }, duration * 1000);
+}
+
+// 반복 생성
+setInterval(createPetal, 600); // 0.3초마다 생성
