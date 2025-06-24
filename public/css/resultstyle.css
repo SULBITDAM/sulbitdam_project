@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "DungGeunMo";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   font-family: "Noto Sans KR", sans-serif;
@@ -90,16 +98,28 @@ nav .tabs a.active::after {
 /* 모바일 헤더 */
 .mobile-header {
   display: none;
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  position: fixed;
   z-index: 1000;
   align-items: center;
+  width: 100%;
+  justify-content: end;
+  height: 55px;
 }
 .hamburger {
-  font-size: 26px;
+  font-size: 35px;
   color: white;
   cursor: pointer;
+  padding-right: 10px;
+}
+
+.mobile-header.scrolled {
+  background-color: white; /* 원하는 배경색으로 변경 */
+  transition: background-color 0.3s ease;
+}
+
+.mobile-header.scrolled .hamburger {
+  color: black; /* 스크롤 시 햄버거 아이콘 색상 */
+  transition: color 0.3s ease;
 }
 
 /* 모바일 오버레이 메뉴 */
@@ -311,6 +331,7 @@ section.back {
   margin-top: 20px;
   transition: background-color 0.3s;
   border: 3px solid #d08c4f;
+  font-family: "DungGeunMo";
 }
 .btn-start:hover {
   background-color: #fad792;
@@ -526,7 +547,7 @@ footer {
   /* content sections */
   .section {
     max-width: 400px;
-    padding-bottom: 0;
+    padding-bottom: 20px;
   }
   .info {
     display: flex;
@@ -614,24 +635,19 @@ footer {
   }
   .news-list img {
     height: 200px;
+    object-position: center;
   }
   .news-list p {
     margin-top: 20px;
     font-size: 14px;
   }
   /* 메인으로 */
-
-  .backBtn {
-    text-align: center;
-  }
-  .backBtn button {
-    background-color: #f7e2b5;
-    border: 0;
-    border-radius: 50px;
+  .btn-start {
+    padding: 14px 40px;
     font-size: 16px;
-    padding: 10px 30px;
-    cursor: pointer;
-    color: black;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 25px;
   }
   /* footer */
   .logo {
@@ -675,6 +691,18 @@ header .content.visible {
 .intro div.visible {
   opacity: 1;
   transform: translateX(0);
+}
+
+@media screen and (max-width: 768px) {
+  .intro div {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .intro div.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* 꽃잎효과 */

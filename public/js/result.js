@@ -13,6 +13,17 @@
 //     console.error(err);
 //   });
 
+window.addEventListener("scroll", () => {
+  const mobileHeader = document.querySelector(".mobile-header");
+  if (!mobileHeader) return;
+
+  if (window.scrollY > 50) {
+    mobileHeader.classList.add("scrolled");
+  } else {
+    mobileHeader.classList.remove("scrolled");
+  }
+});
+
 function toggleMobileMenu() {
   const menu = document.getElementById("mobileMenu");
   menu.style.display = menu.style.display === "block" ? "none" : "block";

@@ -1016,3 +1016,16 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+@media screen and (max-width: 768px) {
+  .intro-right {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+  .intro-right.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
