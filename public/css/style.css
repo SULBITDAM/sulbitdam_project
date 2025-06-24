@@ -910,7 +910,7 @@ footer {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   pointer-events: none;
   z-index: 3;
 }
@@ -931,8 +931,42 @@ footer {
     opacity: 1;
   }
   100% {
-    transform: translateY(100vh) rotate(360deg);
+    transform: translateY(600px) rotate(360deg);
     opacity: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .petal {
+    height: 25px;
+    width: 25px;
+  }
+  @keyframes fall {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(500px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .petal {
+    height: 18px;
+    width: 18px;
+  }
+  @keyframes fall {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(400px) rotate(360deg);
+      opacity: 0;
+    }
   }
 }
 
