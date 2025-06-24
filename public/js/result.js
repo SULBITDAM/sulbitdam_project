@@ -73,6 +73,7 @@ window.addEventListener("DOMContentLoaded", () => {
     <p><strong>원재료</strong> ${data.ingredients}</p>
     <p><strong>알콜도수</strong> ${data.alcohol}</p>
     <p><strong>용량</strong> ${data.volume}</p>
+    <p><strong>가격</strong> ${data.price}</p>
     <p><a href="${data.homepage}" target="_blank">공식 홈페이지</a></p>
   `;
 
