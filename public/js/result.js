@@ -146,6 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (introTextEl) observer.observe(introTextEl);
 });
 
+// 꽃잎
 const flowerContainer = document.querySelector(".flower-container");
 
 function createPetal() {

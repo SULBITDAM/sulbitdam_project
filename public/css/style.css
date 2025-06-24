@@ -985,23 +985,34 @@ footer {
 /* 애니메이션 */
 
 /* 초기 상태 */
-/* header .content {
+.fixed-content {
   opacity: 0;
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  top: 45%;
+  transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
-header .content.visible {
+.fixed-content.visible {
   opacity: 1;
   transform: translateY(-50%);
 }
-
-.intro div {
+.intro-right {
   opacity: 0;
   transform: translateX(100px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
-.intro div.visible {
+.intro-right.visible {
   opacity: 1;
   transform: translateX(0);
-} */
+}
+
+.intro-talk-in span {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.intro-talk-in span.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
