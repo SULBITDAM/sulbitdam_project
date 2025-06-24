@@ -809,6 +809,8 @@ h1 {
   .mascot-in h2 {
     font-size: 24px;
     text-align: center;
+    font-family: "DungGeunMo";
+    margin-bottom: 15px;
   }
   .mascot-char {
     height: 200px;
