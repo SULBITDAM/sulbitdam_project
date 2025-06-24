@@ -84,6 +84,80 @@ window.addEventListener("resize", () => {
   track.style.transform = `translateX(0)`;
 });
 
+// 애니메이션
+// 요소가 10% 이상 보이면 visible 클래스 추가
+document.addEventListener("DOMContentLoaded", () => {
+  const observerOptions = {
+    threshold: 0.1,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, observerOptions);
+
+  const fixedContent = document.querySelector(".fixed-content");
+  const introTextEl = document.querySelector(".intro div");
+
+  if (fixedContent) observer.observe(fixedContent);
+  if (introTextEl) observer.observe(introTextEl);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const observerOptions = {
+    threshold: 0.1,
+  };
+
+  // 기본 등장 애니메이션 처리
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target); // 한 번만 실행
+      }
+    });
+  }, observerOptions);
+
+  const fixedContent = document.querySelector(".fixed-content");
+
+  if (fixedContent) observer.observe(fixedContent);
+
+  // 기본 애니메이션 대상 요소들
+  const targets = [
+    ...document.querySelectorAll(".intro-left p, .intro-left button"),
+    document.querySelector(".intro-right"),
+  ];
+
+  targets.forEach((el) => {
+    if (el) observer.observe(el);
+  });
+
+  // 마스코트 요소들 순차 등장
+  const talkMascots = document.querySelectorAll(".intro-talk-in span");
+
+  const mascotObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        talkMascots.forEach((el, index) => {
+          setTimeout(() => {
+            el.classList.add("visible");
+          }, index * 150); // 150ms 간격
+        });
+        mascotObserver.unobserve(entry.target); // 한 번만 실행
+      }
+    });
+  }, observerOptions);
+
+  // 마스코트 관찰 트리거
+  if (talkMascots.length > 0) {
+    mascotObserver.observe(talkMascots[0]);
+  }
+});
+
+// 꽃잎
 const flowerContainer = document.querySelector(".flower-container");
 
 function createPetal() {
