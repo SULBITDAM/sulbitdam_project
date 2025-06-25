@@ -1,5 +1,5 @@
 body {
-  background-image: url("../img/background.png");
+  /* background-image: url("../img/background.png"); */
   background-size: cover;
   background-position: top center;
   display: flex;
@@ -7,6 +7,7 @@ body {
   align-items: center; /* ✅ 가운데 정렬 */
   justify-content: center;
   overflow: hidden;
+  background-color: #fefcf5;
 }
 
 .survey-container {
@@ -166,7 +167,7 @@ body {
   }
 
   .answer-btn {
-    font-size: 12px;
+    font-size: 16px;
     padding: 10px;
     border-radius: 16px;
   }
