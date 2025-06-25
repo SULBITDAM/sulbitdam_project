@@ -15,27 +15,24 @@ body {
 a {
   text-decoration: none;
 }
-#wrap {
-  background-image: url("../img/background.png");
-  background-size: 3000px auto;
-  background-repeat: repeat;
-  background-position: top center;
-}
 header,
 footer {
   text-align: center;
   padding: 16px;
 }
 
-.container {
+.hero .container {
   width: 100%;
   height: 100%;
   position: relative;
 }
-.intro,
-.introduce {
+.intro {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 50px 20px;
+  display: flow-root;
+}
+.introduce {
   padding: 50px 20px;
   display: flow-root;
 }
@@ -246,7 +243,7 @@ h1 {
   gap: 50px;
   margin: 0 auto;
   text-align: left;
-  padding: 0px 100px;
+  padding: 0px 50px;
 }
 
 .intro-left,
@@ -284,21 +281,76 @@ h1 {
 }
 .intro-talk {
   margin-top: 40px;
+  padding: 100px 0px;
+  background-color: #f1f3f5;
 }
-.intro-talk p {
-  font-size: 20px;
+.intro-talk > p {
+  font-size: 30px;
+  font-weight: bold;
   text-align: center;
+  margin: 0;
   margin-bottom: 50px;
 }
 .intro-talk-in {
   display: flex;
-  gap: 80px;
+  gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
-  font-weight: bold;
 }
-.intro-talk-in img {
-  width: 100px;
+.intro-talk-in p {
+  font-size: 22px;
+  margin: 0;
+  text-align: center;
+}
+.intro-talk-in div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.intro-talk-in p:nth-child(2) {
+  font-weight: 600;
+  margin: 15px 0;
+}
+.intro-talk-in p:nth-child(3) {
+  font-weight: 400;
+  font-size: 18px;
+}
+.img-wrapper {
+  width: 450px;
+  height: 350px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.img-wrapper > div {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+  border-radius: 20px;
+}
+.img-wrapper:hover > div {
+  transform: scale(1.05);
+}
+
+.img-wrapper > div > div {
+  border-radius: 20px;
+}
+.intro-talk-in_imgA {
+  background-image: url(../img/talk_imgA.jpg);
+  border-radius: 20px;
+  background-position: center;
+}
+.intro-talk-in_imgB {
+  background-image: url(../img/talk_imgB.jpg);
+  background-position: left;
+}
+.intro-talk-in_imgC {
+  background-image: url(../img/talk_imgC.jpg);
+  background-position: left;
 }
 .talk-name {
   text-align: center;
@@ -316,6 +368,29 @@ h1 {
 .btn-wrapper {
   text-align: center;
   margin-top: 40px;
+}
+
+@media screen and (max-width: 1450px) {
+  .img-wrapper {
+    width: 400px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 1290px) {
+  .intro-talk-in p {
+    font-size: 20px;
+  }
+  .intro-talk-in p:nth-child(2) {
+    margin-top: 0;
+  }
+  .intro-talk-in p:nth-child(3) {
+    font-size: 16px;
+  }
+  .img-wrapper {
+    width: 300px;
+    height: 200px;
+  }
 }
 
 /* 태블릿 1024 이하 */
@@ -343,17 +418,33 @@ h1 {
     margin-top: 20px;
   }
   .intro-talk {
-    margin-top: 0px;
+    padding: 60px 0px;
   }
-  .intro-talk p {
+  .intro-talk > p {
+    font-size: 28px;
+  }
+  .intro-talk-in p {
     font-size: 18px;
-    margin-bottom: 30px;
   }
-  .intro-talk-in {
-    gap: 50px;
+  .intro-talk-in p:nth-child(2) {
+    font-weight: 600;
+    margin: 15px 0;
+    margin-top: 0;
   }
-  .intro-talk-in img {
-    width: 70px;
+  .intro-talk-in p:nth-child(3) {
+    font-size: 16px;
+  }
+  .img-wrapper {
+    width: 220px;
+    height: 120px;
+  }
+  .img-wrapper > div {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease;
+    border-radius: 10px;
   }
   .intro-right img {
     width: 300px;
@@ -393,29 +484,59 @@ h1 {
     margin: 10px 0px;
   }
 
-  .sugar-level {
-    font-weight: bold;
-    font-size: 16px;
-    display: inline-block;
-    margin-top: 10px;
-    margin-left: 60px;
-    border: 1px solid #f4dfb5;
-  }
   .intro-talk {
-    margin-top: 20px;
-    margin-bottom: 50px;
+    padding: 50px 0px;
   }
-  .intro-talk p {
-    font-size: 16px;
-    text-align: center;
-    padding: 0px 100px;
+  .intro-talk > p {
+    font-size: 22px;
   }
   .intro-talk-in {
-    font-size: 8px;
-    gap: 10px;
+    flex-direction: column;
   }
-  .intro-talk-in img {
-    width: 50px;
+  .intro-talk-in p {
+    font-size: 18px;
+  }
+  .intro-talk-in p:nth-child(2) {
+    margin-top: 0;
+  }
+  .intro-talk-in p:nth-child(3) {
+    font-size: 16px;
+  }
+  .img-wrapper {
+    width: 280px;
+    height: 180px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .img-wrapper > div {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease;
+    border-radius: 5px;
+  }
+  .img-wrapper:hover > div {
+    transform: scale(1.05);
+  }
+
+  .img-wrapper > div > div {
+    border-radius: 20px;
+  }
+  .intro-talk-in_imgA {
+    background-image: url(../img/talk_imgA.jpg);
+    border-radius: 20px;
+    background-position: center;
+  }
+  .intro-talk-in_imgB {
+    background-image: url(../img/talk_imgB.jpg);
+    background-position: left;
+  }
+  .intro-talk-in_imgC {
+    background-image: url(../img/talk_imgC.jpg);
+    background-position: left;
   }
   .intro-right img {
     width: 200px;
@@ -612,7 +733,10 @@ h1 {
   text-align: center;
   padding: 80px 20px;
 }
-
+.introduce .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .introduce h2 {
   margin-bottom: 40px;
   font-size: 30px;
@@ -626,7 +750,7 @@ h1 {
 }
 .slider-container {
   overflow: hidden;
-  max-width: 850px;
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   width: fit-content;
@@ -636,9 +760,9 @@ h1 {
   display: flex;
   align-items: flex-end;
   will-change: transform;
-  gap: 120px;
+  gap: 150px;
   margin-left: 30px;
-  height: 300px;
+  height: 450px;
 }
 
 .item {
@@ -650,8 +774,8 @@ h1 {
 }
 
 .item img {
-  width: 170px;
-  height: 170px;
+  width: 280px;
+  height: 280px;
   border-radius: 16px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
   object-fit: cover;
@@ -661,7 +785,7 @@ h1 {
 
 .item p {
   margin: 0 auto;
-  font-size: 1.1rem;
+  font-size: 22px;
   font-weight: 500;
   color: #333;
 }
@@ -673,17 +797,31 @@ h1 {
 }
 
 .item.center p:nth-child(2) {
-  font-size: 1.3rem !important;
+  font-size: 24px !important;
   font-weight: 600;
   color: #111;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 .item.center p:nth-child(3) {
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   color: #111;
   margin-top: 10px;
+}
+/* 태블릿 1024 이하 */
+@media screen and (max-width: 1290px) {
+  /* 전통주 소개 */
+  .slider-container {
+    max-width: 1000px;
+  }
+  .slider-track {
+    gap: 100px;
+  }
+  .item img {
+    width: 250px;
+    height: 250px;
+  }
 }
 
 /* 태블릿 1024 이하 */
@@ -711,9 +849,6 @@ h1 {
 
 /* 모바일 768 이하*/
 @media screen and (max-width: 768px) {
-  #wrap {
-    background-size: 1100px auto;
-  }
   /* 전통주 소개 */
   .introduce {
     padding: 80px 20px;

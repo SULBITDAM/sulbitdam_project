@@ -12,13 +12,13 @@ body {
   background-color: white;
   color: #333;
 }
-#wrap {
-  background-image: url("../img/background.png");
-  background-size: cover;
-  background-position: top center;
-}
 a {
   text-decoration: none;
+}
+h1 {
+  font-size: 30px;
+  margin-bottom: 50px;
+  margin-top: 0;
 }
 header {
   background-image: url("../img/result_img/A/main.jpg");
@@ -63,6 +63,7 @@ nav {
   padding: 30px;
   border-bottom: 1px solid #ddd;
   font-size: 18px;
+  /* background-color: #fefaf6; */
 }
 nav .tabs a {
   position: relative;
@@ -155,15 +156,16 @@ nav .tabs a.active::after {
   display: inline-block;
 }
 /* content sections */
-.section {
-  max-width: 1200px;
+section {
   margin: 0 auto;
-  padding: 50px 20px;
+  padding: 80px 20px;
   display: flow-root;
 }
 .info {
   display: flex;
   align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .info .char {
   width: 300px;
@@ -234,6 +236,13 @@ nav .tabs a.active::after {
   margin-right: 10px;
 }
 /* 소개 */
+.sectionA {
+  background-color: #f1f3f5;
+}
+.section-intro {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .intro {
   padding-top: 20px;
   display: flex;
@@ -284,6 +293,10 @@ nav .tabs a.active::after {
   height: 400px;
 }
 /* 뉴스 */
+.sectionB {
+  background-color: #f1f3f5;
+  padding-bottom: 50px;
+}
 .news-list {
   display: flex;
   margin-top: 16px;
@@ -310,14 +323,13 @@ nav .tabs a.active::after {
   text-align: left;
 }
 /* 메인으로 */
-section.back {
+.back {
   max-width: 1200px;
   margin: 0 auto;
   padding: 50px 20px;
   padding-top: 0px;
   display: flex;
   justify-content: center;
-  margin-top: -30px;
 }
 .btn-start {
   background-color: #ffffff;
