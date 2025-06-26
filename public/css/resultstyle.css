@@ -646,12 +646,14 @@ footer {
     width: 300px;
   }
   .news-list img {
-    height: 200px;
+    height: 300px;
     object-position: center;
   }
   .news-list p {
-    margin-top: 20px;
-    font-size: 14px;
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 30px;
   }
   /* 메인으로 */
   .btn-start {
