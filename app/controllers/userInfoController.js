@@ -19,7 +19,9 @@ exports.saveUserInfoAndSend = async (req, res) => {
   const answerData = await UserAnswer.findById(answerId);
   const url = `${baseUrl}/result/${answerData.result.resultId}`;
 
-  // const url = "com";
+  // const url = "www.naver.com";
+
+  const url2 = "thesooltourism.com/";
   try {
     const answerData = await UserAnswer.findById(answerId);
     if (!answerData)
@@ -44,6 +46,7 @@ exports.saveUserInfoAndSend = async (req, res) => {
           "#{title}": answerData.result.title,
           "#{desc}": answerData.result.desc,
           "#{url}": url,
+          "#{url2}": url2,
         },
         disableSms: false,
       },
