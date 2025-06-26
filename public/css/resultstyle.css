@@ -237,7 +237,7 @@ section {
 }
 /* 소개 */
 .sectionA {
-  background-color: #f1f3f5;
+  background-color: #f8f9fa;
 }
 .section-intro {
   max-width: 1200px;
@@ -294,7 +294,7 @@ section {
 }
 /* 뉴스 */
 .sectionB {
-  background-color: #f1f3f5;
+  background-color: #f8f9fa;
   padding-bottom: 50px;
 }
 .news-list {
