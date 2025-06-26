@@ -842,6 +842,7 @@ h1 {
 
   .slider-track {
     gap: 100px;
+    height: 350px;
   }
   .item img {
     width: 150px;
@@ -881,9 +882,9 @@ h1 {
     margin: 0 auto;
     font-size: 12px;
   }
-
   .item.center p:nth-child(2) {
     font-size: 14px !important;
+    margin-top: 15px;
   }
   .item.center p:nth-child(3) {
     display: none;
