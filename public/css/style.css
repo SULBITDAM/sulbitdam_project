@@ -266,7 +266,9 @@ h1 {
 .intro-left p {
   margin: 10px 0px;
 }
-
+.intro-left p:nth-child(4) {
+  margin-bottom: 30px;
+}
 .sugar-level {
   background-color: #fff4ce;
   color: #333;
@@ -282,7 +284,7 @@ h1 {
 .intro-talk {
   margin-top: 40px;
   padding: 100px 0px;
-  background-color: #f1f3f5;
+  background-color: #f8f9fa;
 }
 .intro-talk > p {
   font-size: 30px;
